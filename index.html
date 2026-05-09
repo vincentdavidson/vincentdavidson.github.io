@@ -54,6 +54,11 @@
             margin-bottom: 10px;
             text-align: center;
         }
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
         .subtitle {
             color: #666;
             font-size: 1.1em;
@@ -104,14 +109,50 @@
         .publication-link:hover {
             background: #0052a3;
         }
+        .updates-list {
+            list-style: none;
+        }
+        .updates-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+        .updates-list li:last-child {
+            border-bottom: none;
+        }
+        .updates-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .update-date {
+            color: #999;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 4px;
+        }
+        .advisor-card {
+            background: #f0f7ff;
+            padding: 20px;
+            border-left: 4px solid #0066cc;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .advisor-card strong {
+            display: block;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
             <a href="#" class="nav-link active" data-section="home">Home</a>
-            <a href="#" class="nav-link" data-section="publications">Publications</a>
             <a href="#" class="nav-link" data-section="about">About</a>
+            <a href="#" class="nav-link" data-section="publications">Publications</a>
         </nav>
 
         <!-- Home Section -->
@@ -123,6 +164,42 @@
                 <a href="https://twitter.com">Twitter</a>
                 <a href="mailto:your.email@example.com">Email</a>
             </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Vincent Davidson is a Ph.D. candidate in Computer Science and Engineering at The Ohio State University, where he serves as a Graduate Research Assistant. He holds a Master's degree in Computer Science from Clemson University and is passionate about data engineering, infrastructure, and solving complex data challenges at scale.</p>
+            
+            <p>His research focuses on making reference architectures actionable and scalable using tools like Databricks and Apache Spark. A key aspect of his work involves building foundations for advanced AI and machine learning workflows that drive business value through better analytics. He is particularly interested in integrating knowledge graphs, trustworthy AI, and advanced analytics—emphasizing fairness, explainability, and robustness, especially in high-stakes domains like predictive science.</p>
+            
+            <p>Vincent's specific research interests include developing debiasing algorithms to improve interpretability in natural language processing, recommender systems, and computational social science. He applies these principles to trustworthy AI, semantic parsing, and knowledge graph reasoning. Bridging data engineering and intelligent systems, he is committed to advancing human–AI collaboration and scalable, reliable solutions.</p>
+            
+            <p>In addition to his doctoral research, Vincent has held data science roles at UNC Health and Nationwide, where he worked on AI-based applications including length-of-stay prediction models and enterprise AI pipelines within Enterprise Data Office (EDO). Looking forward, he aims to mentor the next generation of engineers while fostering continuous learning and innovation in data-driven systems.</p>
+
+            <div class="advisor-card">
+                <strong>Ph.D. Advisor:</strong>
+                <a href="https://people.engineering.osu.edu/people/stewart.962">Christopher Stewart</a><br>
+                <strong>Program:</strong> Ph.D. Computer Science & Engineering<br>
+                <strong>Institution:</strong> The Ohio State University, College of Engineering<br>
+                <strong>Profile:</strong> <a href="https://engineering.osu.edu/people/davidson.805">My OSU Profile</a>
+            </div>
+
+            <h2>Updates</h2>
+            <ul class="updates-list">
+                <li>
+                    Started Ph.D. program at The Ohio State University as Graduate Research Assistant
+                    <span class="update-date">August 2024</span>
+                </li>
+                <li>
+                    Completed Master's degree in Computer Science at Clemson University
+                    <span class="update-date">August 2024</span>
+                </li>
+                <li>
+                    First publication accepted
+                    <span class="update-date">2024</span>
+                </li>
+            </ul>
         </section>
 
         <!-- Publications Section -->
@@ -138,18 +215,6 @@
                 <p>Research on applying human-centered reinforcement learning techniques to develop a digital twin for air battle management operators.</p>
                 <a href="https://link.springer.com/chapter/10.1007/978-3-031-94937-1_2" class="publication-link">Read on Springer →</a>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>Vincent Davidson is a Ph.D. candidate in Computer Science and Engineering at The Ohio State University, where he serves as a Graduate Research Assistant. He holds a Master's degree in Computer Science from Clemson University and is passionate about data engineering, infrastructure, and solving complex data challenges at scale.</p>
-            
-            <p>His research focuses on making reference architectures actionable and scalable using tools like Databricks and Apache Spark. A key aspect of his work involves building foundations for advanced AI and machine learning workflows that drive business value through better analytics. He is particularly interested in integrating knowledge graphs, trustworthy AI, and advanced analytics—emphasizing fairness, explainability, and robustness, especially in high-stakes domains like predictive science.</p>
-            
-            <p>Vincent's specific research interests include developing debiasing algorithms to improve interpretability in natural language processing, recommender systems, and computational social science. He applies these principles to trustworthy AI, semantic parsing, and knowledge graph reasoning. Bridging data engineering and intelligent systems, he is committed to advancing human–AI collaboration and scalable, reliable solutions.</p>
-            
-            <p>In addition to his doctoral research, Vincent has held data science roles at UNC Health and Nationwide, where he worked on AI-based applications including length-of-stay prediction models and enterprise AI pipelines within Databricks and Snowflake for the Enterprise Data Office (EDO). Looking forward, he aims to mentor the next generation of engineers while fostering continuous learning and innovation in data-driven systems.</p>
         </section>
     </div>
 
