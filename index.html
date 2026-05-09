@@ -13,10 +13,6 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Helvetica, Arial, sans-serif;
             background: #ffffff;
@@ -31,11 +27,7 @@
             padding: 22px 25px;
         }
 
-        /* ANDREW-STYLE TABS */
-
         .top-nav {
-            position: sticky;
-            top: 0;
             background: #ffffff;
             padding: 10px 0 12px 0;
             margin-bottom: 24px;
@@ -61,8 +53,6 @@
             text-decoration: underline;
         }
 
-        /* MAIN LAYOUT */
-
         .layout {
             display: flex;
             gap: 42px;
@@ -73,7 +63,7 @@
             width: 220px;
             min-width: 220px;
             position: sticky;
-            top: 62px;
+            top: 22px;
         }
 
         .profile-photo {
@@ -105,9 +95,12 @@
             max-width: 700px;
         }
 
-        section {
-            margin-bottom: 48px;
-            scroll-margin-top: 78px;
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
         }
 
         h1 {
@@ -141,8 +134,6 @@
         a:hover {
             text-decoration: underline;
         }
-
-        /* INDENTED UPDATES */
 
         .updates-list {
             margin-left: 34px;
@@ -203,10 +194,10 @@
     <div class="container">
 
         <nav class="top-nav">
-            <a href="#about" class="nav-link active">About</a>
-            <a href="#publications" class="nav-link">Publications</a>
-            <a href="#teaching" class="nav-link">Teaching</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#about" class="nav-link active" data-page="about">About</a>
+            <a href="#publications" class="nav-link" data-page="publications">Publications</a>
+            <a href="#teaching" class="nav-link" data-page="teaching">Teaching</a>
+            <a href="#contact" class="nav-link" data-page="contact">Contact</a>
         </nav>
 
         <div class="layout">
@@ -234,7 +225,9 @@
 
             <main class="content">
 
-                <section id="about">
+                <!-- ABOUT PAGE -->
+
+                <section id="about" class="page-section active">
 
                     <h1>Vincent Davidson</h1>
 
@@ -318,13 +311,15 @@
                             <em>
                                 Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin
                             </em>!
-                            <a href="#publications">View publication</a>.
+                            <a href="#publications" class="internal-link" data-page="publications">View publication</a>.
                         </li>
                     </ul>
 
                 </section>
 
-                <section id="publications">
+                <!-- PUBLICATIONS PAGE -->
+
+                <section id="publications" class="page-section">
 
                     <h1>Publications</h1>
 
@@ -351,7 +346,9 @@
 
                 </section>
 
-                <section id="teaching">
+                <!-- TEACHING PAGE -->
+
+                <section id="teaching" class="page-section">
 
                     <h1>Teaching</h1>
 
@@ -369,7 +366,9 @@
 
                 </section>
 
-                <section id="contact">
+                <!-- CONTACT PAGE -->
+
+                <section id="contact" class="page-section">
 
                     <h1>Contact</h1>
 
@@ -389,38 +388,53 @@
     </div>
 
     <script>
-        const sections = document.querySelectorAll("main section");
         const navLinks = document.querySelectorAll(".nav-link");
+        const pageSections = document.querySelectorAll(".page-section");
+        const internalLinks = document.querySelectorAll(".internal-link");
 
-        function setActiveTab(id) {
-            navLinks.forEach(link => {
-                link.classList.toggle(
-                    "active",
-                    link.getAttribute("href") === "#" + id
-                );
+        function showPage(pageId) {
+            pageSections.forEach(section => {
+                section.classList.remove("active");
             });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+            });
+
+            document.getElementById(pageId).classList.add("active");
+
+            const activeLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            if (activeLink) {
+                activeLink.classList.add("active");
+            }
+
+            window.location.hash = pageId;
         }
 
         navLinks.forEach(link => {
-            link.addEventListener("click", function () {
-                const id = this.getAttribute("href").replace("#", "");
-                setActiveTab(id);
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const pageId = this.getAttribute("data-page");
+                showPage(pageId);
             });
         });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveTab(entry.target.id);
-                }
+        internalLinks.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const pageId = this.getAttribute("data-page");
+                showPage(pageId);
             });
-        }, {
-            root: null,
-            rootMargin: "-20% 0px -65% 0px",
-            threshold: 0
         });
 
-        sections.forEach(section => observer.observe(section));
+        window.addEventListener("load", function() {
+            const hash = window.location.hash.replace("#", "");
+            if (hash && document.getElementById(hash)) {
+                showPage(hash);
+            } else {
+                showPage("about");
+            }
+        });
     </script>
 
 </body>
