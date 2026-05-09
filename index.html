@@ -37,34 +37,36 @@
         .top-nav {
             position: sticky;
             top: 0;
-
             background: white;
-
             padding-top: 12px;
             padding-bottom: 14px;
-
             margin-bottom: 28px;
-
             z-index: 1000;
+        }
+
+        .top-nav ul {
+            list-style: disc;
+            display: flex;
+            gap: 28px;
+            margin-left: 20px;
+        }
+
+        .top-nav li {
+            color: #555;
         }
 
         .top-nav a {
             color: #555;
             text-decoration: none;
-
-            margin-right: 18px;
-
             font-size: 15px;
             font-weight: normal;
-
             padding-bottom: 2px;
         }
 
         .top-nav a:hover {
             color: #000;
+            text-decoration: underline;
         }
-
-        /* ACTIVE TAB */
 
         .top-nav a.active {
             color: #000;
@@ -92,18 +94,15 @@
         /* PROFILE PHOTO */
 
         .profile-photo {
-            width: 185px;
-            height: 185px;
-
+            width: 175px;
+            height: 175px;
             object-fit: cover;
 
-            /* tighter crop like Andrew's */
-            object-position: 38% 24%;
+            /* tighter crop: trims top and sides while keeping body outline */
+            object-position: 43% 38%;
 
             border-radius: 0;
-
             display: block;
-
             margin-bottom: 16px;
         }
 
@@ -129,7 +128,7 @@
 
         section {
             margin-bottom: 55px;
-            scroll-margin-top: 80px;
+            scroll-margin-top: 85px;
         }
 
         h1 {
@@ -207,13 +206,19 @@
 
             .sidebar {
                 width: 100%;
+                min-width: 100%;
                 position: relative;
                 top: 0;
             }
 
             .profile-photo {
-                width: 170px;
-                height: 170px;
+                width: 165px;
+                height: 165px;
+            }
+
+            .top-nav ul {
+                flex-wrap: wrap;
+                gap: 22px;
             }
 
         }
@@ -230,10 +235,12 @@
 
         <nav class="top-nav">
 
-            <a href="#about" class="nav-link active">About</a>
-            <a href="#publications" class="nav-link">Publications</a>
-            <a href="#teaching" class="nav-link">Teaching</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <ul>
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#teaching" class="nav-link">Teaching</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
 
         </nav>
 
@@ -290,71 +297,69 @@
                         and a Bachelor of Science in Computer Science from Winston-Salem State University.
                     </p>
 
-                    <!-- UPDATES -->
-
-                    <h2>Updates</h2>
+                    <h2>Updates:</h2>
 
                     <ul class="updates-list">
 
                         <li>
-                            <strong>June 2026:</strong>
+                            <strong>June 2026—</strong>
                             Participating in the
                             <a href="https://www.databricks.com/dataaisummit/">
                                 Databricks Data + AI Summit
-                            </a> live from San Francisco, CA!
+                            </a>.
                         </li>
 
                         <li>
-                            <strong>April 2026:</strong>
+                            <strong>April 2026—</strong>
                             Passed the Qualifying Exams for the Ph.D. program in Computer Science and Engineering at
-                            The Ohio State University!
+                            The Ohio State University.
                         </li>
 
                         <li>
-                            <strong>February 2026:</strong>
-                            Promoted to Specialist, Databricks Engineer at Nationwide!
+                            <strong>February 2026—</strong>
+                            Promoted to Specialist, Databricks Engineer at Nationwide.
                             <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_im-happy-to-share-that-ive-been-promoted-activity-7432881523097296896-kEeO">
                                 Learn more
                             </a>.
                         </li>
 
                         <li>
-                            <strong>October 2025:</strong>
+                            <strong>October 2025—</strong>
                             Co-led Databricks’ third Generative AI workshop in Phoenix, Arizona,
-                            highlighting the new AgentBricks feature!
+                            highlighting the new AgentBricks feature.
                             <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_small-town-kid-with-big-goals-i-am-extremely-activity-7389793603721515009--EOw">
                                 Learn more
                             </a>.
                         </li>
 
                         <li>
-                            <strong>December 2024:</strong>
-                            Joined Nationwide as a Sr. Analyst, Databricks Engineer!
+                            <strong>December 2024—</strong>
+                            Joined Nationwide as a Sr. Analyst, Databricks Engineer.
                             <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_newnationwider-offeraccepted-teamnationwide-activity-7270432714703474689-Gr3g">
                                 Learn more
                             </a>.
                         </li>
 
                         <li>
-                            <strong>August 2024:</strong>
+                            <strong>August 2024—</strong>
                             Started the Ph.D. program in Computer Science and Engineering at
-                            The Ohio State University!
+                            The Ohio State University.
                         </li>
 
                         <li>
-                            <strong>August 2024:</strong>
-                            Graduated with a Master’s degree in Computer Science from Clemson University!
+                            <strong>August 2024—</strong>
+                            Graduated with a Master’s degree in Computer Science from Clemson University.
                             <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_gobuckeyes-activity-7228764054167662593-65i_">
                                 Learn more
                             </a>.
                         </li>
 
                         <li>
-                            <strong>2024:</strong>
+                            <strong>2024—</strong>
                             First publication accepted at Computational Science and Computational Intelligence (CSCI) 2024:
                             <em>
                                 Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin
-                            </em>!
+                            </em>.
                             <a href="#publications">
                                 View publication
                             </a>.
@@ -455,34 +460,35 @@
 
     <script>
 
-        const sections = document.querySelectorAll("section");
+        const sections = document.querySelectorAll("main section");
         const navLinks = document.querySelectorAll(".nav-link");
 
-        window.addEventListener("scroll", () => {
-
-            let current = "";
-
-            sections.forEach(section => {
-
-                const sectionTop = section.offsetTop - 120;
-
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute("id");
-                }
-
-            });
-
+        function setActiveTab(id) {
             navLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-                if (link.getAttribute("href") === "#" + current) {
-                    link.classList.add("active");
-                }
-
+                link.classList.toggle("active", link.getAttribute("href") === "#" + id);
             });
+        }
 
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                const id = this.getAttribute("href").replace("#", "");
+                setActiveTab(id);
+            });
         });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveTab(entry.target.id);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: "-20% 0px -65% 0px",
+            threshold: 0
+        });
+
+        sections.forEach(section => observer.observe(section));
 
     </script>
 
