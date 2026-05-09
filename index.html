@@ -7,7 +7,6 @@
     <title>Vincent Davidson</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -19,100 +18,69 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #ffffff;
-            color: #333;
-            line-height: 1.7;
+            color: #222;
+            line-height: 1.6;
+            font-size: 16px;
         }
 
         .page {
-            display: flex;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 50px 35px;
-            gap: 60px;
+            padding: 30px 25px;
         }
-
-        /* SIDEBAR */
-
-        .sidebar {
-            width: 320px;
-            min-width: 320px;
-            position: sticky;
-            top: 40px;
-            height: fit-content;
-        }
-
-        /* TOP NAVIGATION */
 
         .top-nav {
             display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-
-            background: #f3f4f6;
-            border: 1px solid #e5e7eb;
-
-            padding: 12px;
-            border-radius: 12px;
-
+            gap: 24px;
             margin-bottom: 35px;
+            font-size: 16px;
         }
 
         .top-nav a {
-            color: #4b5563;
+            color: #555;
             text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 500;
-
-            padding: 8px 14px;
-            border-radius: 8px;
-
-            transition: all 0.25s ease;
         }
 
         .top-nav a:hover {
-            background: #e5e7eb;
-            color: #111827;
+            color: #000;
+            text-decoration: underline;
         }
 
-        /* PROFILE */
+        .layout {
+            display: flex;
+            gap: 55px;
+            align-items: flex-start;
+        }
 
-        .profile-wrapper {
+        .sidebar {
+            width: 260px;
+            min-width: 260px;
+            position: sticky;
+            top: 25px;
             text-align: center;
         }
 
         .profile-photo {
-            width: 230px;
-            height: 230px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center 20%;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            margin-bottom: 25px;
+            margin-bottom: 18px;
         }
 
-        .profile-wrapper h2 {
-            font-size: 2em;
+        .sidebar h3 {
+            font-size: 22px;
             margin-bottom: 10px;
-            color: #111827;
         }
 
-        .sidebar-title {
-            color: #4b5563;
-            font-size: 1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        .sidebar p {
+            color: #444;
+            font-size: 15px;
+            margin-bottom: 12px;
         }
-
-        .sidebar-employer {
-            color: #374151;
-            font-size: 0.98em;
-            line-height: 1.6;
-        }
-
-        /* MAIN CONTENT */
 
         .content {
             flex: 1;
@@ -120,36 +88,34 @@
         }
 
         section {
-            margin-bottom: 100px;
-            scroll-margin-top: 50px;
+            margin-bottom: 80px;
+            scroll-margin-top: 30px;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 22px;
-            color: #111827;
+            font-size: 36px;
+            margin-bottom: 18px;
+            font-weight: 600;
         }
 
         h2 {
-            font-size: 1.6em;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            color: #111827;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
         h3 {
-            font-size: 1.15em;
+            font-size: 19px;
             margin-bottom: 8px;
-            color: #111827;
         }
 
         p {
-            margin-bottom: 16px;
-            color: #374151;
+            margin-bottom: 15px;
         }
 
         a {
-            color: #2563eb;
+            color: #0066cc;
             text-decoration: none;
         }
 
@@ -157,116 +123,37 @@
             text-decoration: underline;
         }
 
-        /* CARDS */
-
-        .card {
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-
-            padding: 22px;
-            margin-bottom: 22px;
-
-            border-radius: 12px;
-        }
-
-        .card-meta {
-            color: #6b7280;
-            font-size: 0.95em;
-            margin-bottom: 12px;
-        }
-
-        .card-link {
-            display: inline-block;
-
-            margin-top: 12px;
-
-            padding: 8px 16px;
-
-            background: #2563eb;
-            color: white;
-
-            border-radius: 8px;
-
-            transition: background 0.25s ease;
-        }
-
-        .card-link:hover {
-            background: #1d4ed8;
-            text-decoration: none;
-        }
-
-        /* UPDATES */
-
         .updates-list {
-            list-style: none;
-            margin-top: 18px;
+            margin-left: 22px;
         }
 
         .updates-list li {
-            padding: 16px 0;
-            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 10px;
         }
 
         .update-date {
-            color: #9ca3af;
-            font-size: 0.9em;
-            display: block;
-            margin-top: 4px;
+            font-weight: 600;
         }
 
-        .update-link {
-            display: inline-block;
-
-            margin-top: 8px;
-
-            background: #eff6ff;
-            color: #2563eb;
-
-            padding: 6px 12px;
-
-            border-radius: 8px;
-            font-size: 0.9em;
+        .card {
+            margin-bottom: 25px;
         }
 
-        .update-link:hover {
-            background: #dbeafe;
-            text-decoration: none;
+        .card-meta {
+            color: #555;
+            margin-bottom: 10px;
         }
-
-        /* CONTACT */
 
         .contact-links {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
-        .contact-links a {
-            display: inline-block;
-
-            background: #2563eb;
-            color: white;
-
-            padding: 10px 18px;
-
-            border-radius: 8px;
-
-            transition: background 0.25s ease;
-        }
-
-        .contact-links a:hover {
-            background: #1d4ed8;
-            text-decoration: none;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            .page {
+        @media (max-width: 850px) {
+            .layout {
                 flex-direction: column;
-                padding: 30px 20px;
             }
 
             .sidebar {
@@ -276,250 +163,183 @@
                 top: 0;
             }
 
+            .top-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             .content {
                 max-width: 100%;
             }
-
-            .profile-wrapper {
-                text-align: center;
-            }
-
-            .profile-photo {
-                width: 200px;
-                height: 200px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
         }
-
     </style>
-
 </head>
 
 <body>
 
     <div class="page">
 
-        <!-- SIDEBAR -->
+        <nav class="top-nav">
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <aside class="sidebar">
+        <div class="layout">
 
-            <!-- NAVIGATION -->
-
-            <div class="top-nav">
-
-                <a href="#about">About</a>
-                <a href="#publications">Publications</a>
-                <a href="#teaching">Teaching</a>
-                <a href="#contact">Contact</a>
-
-            </div>
-
-            <!-- PROFILE -->
-
-            <div class="profile-wrapper">
+            <aside class="sidebar">
 
                 <img src="images/bizphoto.jpg"
                      alt="Vincent Davidson"
                      class="profile-photo">
 
-                <h2>Vincent Davidson</h2>
+                <h3>Vincent Davidson</h3>
 
-                <p class="sidebar-title">
+                <p>
                     Ph.D. Candidate<br>
                     Computer Science & Engineering<br>
                     The Ohio State University
                 </p>
 
-                <p class="sidebar-employer">
+                <p>
                     Specialist, Databricks Engineer<br>
                     Nationwide
                 </p>
 
-            </div>
+            </aside>
 
-        </aside>
+            <main class="content">
 
-        <!-- MAIN CONTENT -->
+                <section id="about">
 
-        <main class="content">
-
-            <!-- ABOUT -->
-
-            <section id="about">
-
-                <h1>Vincent Davidson</h1>
-
-                <p>
-                    I am a Ph.D. candidate in Computer Science and Engineering at
-                    The Ohio State University and currently serve as a Specialist,
-                    Databricks Engineer at Nationwide.
-                </p>
-
-                <p>
-                    My research focuses on trustworthy and context-aware Large Language Models (LLMs),
-                    knowledge graphs, scalable AI systems, and human-centered machine learning.
-                    I am particularly interested in building enterprise AI systems that improve
-                    interpretability, trustworthiness, and human-AI collaboration.
-                </p>
-
-                <p>
-                    I hold a Master's degree in Computer Science from Clemson University
-                    and a Bachelor of Science in Computer Science from Winston-Salem State University.
-                </p>
-
-                <!-- UPDATES -->
-
-                <h2>Updates</h2>
-
-                <ul class="updates-list">
-
-                    <li>
-                        Participating in Databricks Data + AI Summit
-                        <span class="update-date">June 15–18, 2026</span>
-
-                        <a href="https://www.databricks.com/dataaisummit/"
-                           class="update-link">
-                            Learn more →
-                        </a>
-                    </li>
-
-                    <li>
-                        Passed Qualifying Exams for PhD in Computer Science and Engineering
-                        <span class="update-date">April 2026</span>
-                    </li>
-
-                    <li>
-                        Promoted to Specialist, Databricks Engineer at Nationwide
-                        <span class="update-date">February 2026</span>
-                    </li>
-
-                    <li>
-                        Co-led Databricks Generative AI workshop in Phoenix, AZ
-                        <span class="update-date">October 2025</span>
-                    </li>
-
-                    <li>
-                        First publication accepted at Computational Science and Computational Intelligence 2024
-                        <span class="update-date">2024</span>
-
-                        <a href="#publications" class="update-link">
-                            View publication →
-                        </a>
-                    </li>
-
-                </ul>
-
-            </section>
-
-            <!-- PUBLICATIONS -->
-
-            <section id="publications">
-
-                <h1>Publications</h1>
-
-                <div class="card">
-
-                    <h3>
-                        Application of Human Centered Reinforcement Learning
-                        to Develop an Air Battle Management Operator Digital Twin
-                    </h3>
-
-                    <div class="card-meta">
-                        Courtney L. Crooks, Jasmine Davidson, Vincent Davidson,
-                        Patrick Tyne, Katy Wills, Peter Lebedev, Tyler Rowe,
-                        Eric Tang, and Jessica Inman
-                        <br><br>
-                        Springer, 2024
-                    </div>
+                    <h1>Vincent Davidson</h1>
 
                     <p>
-                        Research on applying human-centered reinforcement learning
-                        techniques to develop a digital twin for air battle
-                        management operators.
+                        I am a Ph.D. candidate in Computer Science and Engineering at
+                        The Ohio State University and currently serve as a Specialist,
+                        Databricks Engineer at Nationwide.
                     </p>
 
-                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-94937-1_2"
-                       class="card-link">
-                        Read on Springer →
-                    </a>
+                    <p>
+                        My research focuses on trustworthy and context-aware Large Language Models,
+                        knowledge graphs, scalable AI systems, and human-centered machine learning.
+                        I am particularly interested in building enterprise AI systems that improve
+                        interpretability, trustworthiness, and human-AI collaboration.
+                    </p>
 
-                </div>
+                    <p>
+                        I hold a Master's degree in Computer Science from Clemson University
+                        and a Bachelor of Science in Computer Science from Winston-Salem State University.
+                    </p>
 
-            </section>
+                    <h2>Updates:</h2>
 
-            <!-- TEACHING -->
+                    <ul class="updates-list">
 
-            <section id="teaching">
+                        <li>
+                            <span class="update-date">June 2026—</span>
+                            Participating in
+                            <a href="https://www.databricks.com/dataaisummit/">
+                                Databricks Data + AI Summit
+                            </a>.
+                        </li>
 
-                <h1>Teaching</h1>
+                        <li>
+                            <span class="update-date">April 2026—</span>
+                            Passed Qualifying Exams for PhD in Computer Science and Engineering.
+                        </li>
 
-                <div class="card">
+                        <li>
+                            <span class="update-date">February 2026—</span>
+                            Promoted to Specialist, Databricks Engineer at Nationwide.
+                        </li>
+
+                        <li>
+                            <span class="update-date">October 2025—</span>
+                            Co-led Databricks Generative AI workshop in Phoenix, AZ.
+                        </li>
+
+                        <li>
+                            <span class="update-date">2024—</span>
+                            First publication accepted at Computational Science and Computational Intelligence 2024.
+                            <a href="#publications">View publication</a>.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <section id="publications">
+
+                    <h1>Publications</h1>
+
+                    <div class="card">
+
+                        <h3>
+                            Application of Human Centered Reinforcement Learning
+                            to Develop an Air Battle Management Operator Digital Twin
+                        </h3>
+
+                        <p class="card-meta">
+                            Courtney L. Crooks, Jasmine Davidson, Vincent Davidson,
+                            Patrick Tyne, Katy Wills, Peter Lebedev, Tyler Rowe,
+                            Eric Tang, and Jessica Inman<br>
+                            Springer, 2024
+                        </p>
+
+                        <p>
+                            Research on applying human-centered reinforcement learning
+                            techniques to develop a digital twin for air battle
+                            management operators.
+                        </p>
+
+                        <p>
+                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-94937-1_2">
+                                Read on Springer →
+                            </a>
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <section id="teaching">
+
+                    <h1>Teaching</h1>
 
                     <h3>Spring 2026</h3>
 
                     <p>
-                        <strong>Unlocking Generative AI (ENGR 2194)</strong>
+                        Unlocking Generative AI — ENGR 2194<br>
+                        Python Perspectives — COMPEDU 2194
                     </p>
-
-                    <p>
-                        <strong>Python Perspectives (COMPEDU 2194)</strong>
-                    </p>
-
-                </div>
-
-                <div class="card">
 
                     <h3>Fall 2025</h3>
 
                     <p>
-                        <strong>Unlocking Generative AI (ENGR 2194)</strong>
+                        Unlocking Generative AI — ENGR 2194<br>
+                        Python Perspectives — COMPEDU 2194
                     </p>
+
+                </section>
+
+                <section id="contact">
+
+                    <h1>Contact</h1>
 
                     <p>
-                        <strong>Python Perspectives (COMPEDU 2194)</strong>
+                        <a href="mailto:drvintdave@gmail.com">Gmail</a> |
+                        <a href="mailto:davidson.805@osu.edu">Ohio State Email</a> |
+                        <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/">LinkedIn</a> |
+                        <a href="https://github.com/vincentdavidson">GitHub</a>
                     </p>
 
-                </div>
+                </section>
 
-            </section>
+            </main>
 
-            <!-- CONTACT -->
-
-            <section id="contact">
-
-                <h1>Contact</h1>
-
-                <p>
-                    Get in touch with me:
-                </p>
-
-                <div class="contact-links">
-
-                    <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/">
-                        LinkedIn
-                    </a>
-
-                    <a href="https://github.com/vincentdavidson">
-                        GitHub
-                    </a>
-
-                    <a href="mailto:drvintdave@gmail.com">
-                        Gmail
-                    </a>
-
-                    <a href="mailto:davidson.805@osu.edu">
-                        Ohio State Email
-                    </a>
-
-                </div>
-
-            </section>
-
-        </main>
+        </div>
 
     </div>
 
