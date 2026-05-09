@@ -7,6 +7,7 @@
     <title>Vincent Davidson</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -21,25 +22,64 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: #ffffff;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .page {
             display: flex;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 30px;
-            gap: 50px;
+            padding: 50px 35px;
+            gap: 60px;
         }
 
-        /* LEFT SIDEBAR */
+        /* SIDEBAR */
 
         .sidebar {
-            width: 300px;
-            min-width: 300px;
+            width: 320px;
+            min-width: 320px;
             position: sticky;
             top: 40px;
             height: fit-content;
+        }
+
+        /* TOP NAVIGATION */
+
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+
+            padding: 12px;
+            border-radius: 12px;
+
+            margin-bottom: 35px;
+        }
+
+        .top-nav a {
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+
+            padding: 8px 14px;
+            border-radius: 8px;
+
+            transition: all 0.25s ease;
+        }
+
+        .top-nav a:hover {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        /* PROFILE */
+
+        .profile-wrapper {
             text-align: center;
         }
 
@@ -49,116 +89,109 @@
             border-radius: 50%;
             object-fit: cover;
             object-position: center 20%;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
             margin-bottom: 25px;
         }
 
-        .sidebar h2 {
-            font-size: 1.8em;
+        .profile-wrapper h2 {
+            font-size: 2em;
             margin-bottom: 10px;
-            color: #222;
+            color: #111827;
         }
 
         .sidebar-title {
-            color: #555;
+            color: #4b5563;
             font-size: 1em;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        .sidebar nav {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .sidebar nav a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1em;
-        }
-
-        .sidebar nav a:hover {
-            color: #0052a3;
-            text-decoration: underline;
+        .sidebar-employer {
+            color: #374151;
+            font-size: 0.98em;
+            line-height: 1.6;
         }
 
         /* MAIN CONTENT */
 
         .content {
             flex: 1;
-            max-width: 780px;
+            max-width: 760px;
         }
 
         section {
-            padding-top: 20px;
-            margin-bottom: 90px;
+            margin-bottom: 100px;
+            scroll-margin-top: 50px;
         }
 
         h1 {
-            font-size: 2.4em;
-            margin-bottom: 20px;
-            color: #222;
+            font-size: 2.5em;
+            margin-bottom: 22px;
+            color: #111827;
         }
 
         h2 {
-            font-size: 1.7em;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            color: #222;
+            font-size: 1.6em;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: #111827;
         }
 
         h3 {
-            font-size: 1.2em;
+            font-size: 1.15em;
             margin-bottom: 8px;
-            color: #222;
+            color: #111827;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            color: #374151;
         }
 
         a {
-            color: #0066cc;
+            color: #2563eb;
             text-decoration: none;
         }
 
         a:hover {
-            color: #0052a3;
             text-decoration: underline;
         }
 
         /* CARDS */
 
         .card {
-            background: #f9f9f9;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #0066cc;
-            border-radius: 4px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+
+            padding: 22px;
+            margin-bottom: 22px;
+
+            border-radius: 12px;
         }
 
         .card-meta {
-            color: #666;
+            color: #6b7280;
             font-size: 0.95em;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .card-link {
             display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background: #0066cc;
+
+            margin-top: 12px;
+
+            padding: 8px 16px;
+
+            background: #2563eb;
             color: white;
-            border-radius: 4px;
-            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition: background 0.25s ease;
         }
 
         .card-link:hover {
-            background: #0052a3;
-            color: white;
+            background: #1d4ed8;
             text-decoration: none;
         }
 
@@ -166,26 +199,16 @@
 
         .updates-list {
             list-style: none;
-            margin-top: 15px;
+            margin-top: 18px;
         }
 
         .updates-list li {
-            padding: 13px 0;
-            padding-left: 30px;
-            position: relative;
-            border-bottom: 1px solid #eee;
-        }
-
-        .updates-list li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #0066cc;
-            font-weight: bold;
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .update-date {
-            color: #999;
+            color: #9ca3af;
             font-size: 0.9em;
             display: block;
             margin-top: 4px;
@@ -193,33 +216,42 @@
 
         .update-link {
             display: inline-block;
-            margin-top: 7px;
-            padding: 5px 12px;
-            background: #e6f0ff;
-            color: #0066cc;
-            border-radius: 4px;
+
+            margin-top: 8px;
+
+            background: #eff6ff;
+            color: #2563eb;
+
+            padding: 6px 12px;
+
+            border-radius: 8px;
             font-size: 0.9em;
         }
 
         .update-link:hover {
-            background: #cce5ff;
+            background: #dbeafe;
             text-decoration: none;
         }
 
         /* ADVISOR */
 
         .advisor-card {
-            background: #f0f7ff;
-            padding: 20px;
-            border-left: 4px solid #0066cc;
-            border-radius: 4px;
-            margin-top: 25px;
-            margin-bottom: 35px;
+            background: #f9fafb;
+
+            border: 1px solid #e5e7eb;
+
+            padding: 22px;
+
+            border-radius: 12px;
+
+            margin-top: 30px;
+            margin-bottom: 40px;
         }
 
         .advisor-card strong {
             display: block;
             margin-bottom: 6px;
+            color: #111827;
         }
 
         /* CONTACT */
@@ -233,42 +265,44 @@
 
         .contact-links a {
             display: inline-block;
-            padding: 10px 16px;
-            background: #0066cc;
+
+            background: #2563eb;
             color: white;
-            border-radius: 4px;
-            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            transition: background 0.25s ease;
         }
 
         .contact-links a:hover {
-            background: #0052a3;
-            color: white;
+            background: #1d4ed8;
             text-decoration: none;
         }
 
         /* MOBILE */
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
+
             .page {
                 flex-direction: column;
-                padding: 25px 20px;
+                padding: 30px 20px;
             }
 
             .sidebar {
-                position: relative;
-                top: 0;
                 width: 100%;
                 min-width: 100%;
-            }
-
-            .sidebar nav {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
+                position: relative;
+                top: 0;
             }
 
             .content {
                 max-width: 100%;
+            }
+
+            .profile-wrapper {
+                text-align: center;
             }
 
             .profile-photo {
@@ -279,37 +313,54 @@
             h1 {
                 font-size: 2em;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <div class="page">
 
-        <!-- LEFT SIDEBAR -->
+        <!-- SIDEBAR -->
 
         <aside class="sidebar">
 
-            <img src="images/bizphoto.jpg"
-                 alt="Vincent Davidson"
-                 class="profile-photo">
+            <!-- NAVIGATION -->
 
-            <h2>Vincent Davidson</h2>
+            <div class="top-nav">
 
-            <p class="sidebar-title">
-                Ph.D. Candidate<br>
-                Computer Science & Engineering<br>
-                The Ohio State University<br>
-                Specialist, Databricks Engineer
-            </p>
-
-            <nav>
                 <a href="#about">About</a>
                 <a href="#publications">Publications</a>
                 <a href="#teaching">Teaching</a>
                 <a href="#contact">Contact</a>
-            </nav>
+
+            </div>
+
+            <!-- PROFILE -->
+
+            <div class="profile-wrapper">
+
+                <img src="images/bizphoto.jpg"
+                     alt="Vincent Davidson"
+                     class="profile-photo">
+
+                <h2>Vincent Davidson</h2>
+
+                <p class="sidebar-title">
+                    Ph.D. Candidate<br>
+                    Computer Science & Engineering<br>
+                    The Ohio State University
+                </p>
+
+                <p class="sidebar-employer">
+                    Specialist, Databricks Engineer<br>
+                    Nationwide
+                </p>
+
+            </div>
 
         </aside>
 
@@ -321,7 +372,7 @@
 
             <section id="about">
 
-                <h1>Vincent Davidson</h1>
+                <h1>About</h1>
 
                 <p>
                     I am a Ph.D. candidate in Computer Science and Engineering at
@@ -336,12 +387,14 @@
                 </p>
 
                 <p>
-                    I currently serve as Specialist, Databricks Engineer at Nationwide Headquarters,
+                    I currently serve as Specialist, Databricks Engineer at Nationwide,
                     where I build enterprise-scale machine learning and data engineering solutions.
                 </p>
 
                 <div class="advisor-card">
+
                     <strong>Ph.D. Advisor:</strong>
+
                     <a href="https://people.engineering.osu.edu/people/stewart.962">
                         Christopher Stewart
                     </a>
@@ -359,9 +412,11 @@
                     <br><br>
 
                     <strong>Profile:</strong>
+
                     <a href="https://engineering.osu.edu/people/davidson.805">
                         My OSU Profile
                     </a>
+
                 </div>
 
                 <h2>Updates</h2>
@@ -384,52 +439,13 @@
                     </li>
 
                     <li>
-                        Promoted to Specialist, Databricks Engineer at Nationwide Headquarters
+                        Promoted to Specialist, Databricks Engineer at Nationwide
                         <span class="update-date">February 2026</span>
-
-                        <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_im-happy-to-share-that-ive-been-promoted-activity-7432881523097296896-kEeO"
-                           class="update-link">
-                            Learn more →
-                        </a>
                     </li>
 
                     <li>
-                        Co-led Databricks third Generative AI workshop in Phoenix, AZ, highlighting the new AgentBricks feature
+                        Co-led Databricks Generative AI workshop in Phoenix, AZ
                         <span class="update-date">October 2025</span>
-
-                        <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_small-town-kid-with-big-goals-i-am-extremely-activity-7389793603721515009--EOw"
-                           class="update-link">
-                            Learn more →
-                        </a>
-                    </li>
-
-                    <li>
-                        Hired as a Sr. Analyst, Databricks Engineer at Nationwide Headquarters
-                        <span class="update-date">December 2024</span>
-
-                        <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_newnationwider-offeraccepted-teamnationwide-activity-7270432714703474689-Gr3g"
-                           class="update-link">
-                            Learn more →
-                        </a>
-                    </li>
-
-                    <li>
-                        Started Ph.D. program in Computer Science and Engineering at The Ohio State University
-                        <span class="update-date">August 2024</span>
-                    </li>
-
-                    <li>
-                        Graduated with a Master's degree in Computer Science from Clemson University
-                        <span class="update-date">August 2024</span>
-                    </li>
-
-                    <li>
-                        First publication accepted at Computational Science and Computational Intelligence 2024
-                        <span class="update-date">2024</span>
-
-                        <a href="#publications" class="update-link">
-                            View publication →
-                        </a>
                     </li>
 
                 </ul>
@@ -453,7 +469,7 @@
                         Courtney L. Crooks, Jasmine Davidson, Vincent Davidson,
                         Patrick Tyne, Katy Wills, Peter Lebedev, Tyler Rowe,
                         Eric Tang, and Jessica Inman
-                        <br>
+                        <br><br>
                         Springer, 2024
                     </div>
 
@@ -479,23 +495,31 @@
                 <h1>Teaching</h1>
 
                 <div class="card">
+
                     <h3>Spring 2026</h3>
+
                     <p>
                         <strong>Unlocking Generative AI (ENGR 2194)</strong>
                     </p>
+
                     <p>
                         <strong>Python Perspectives (COMPEDU 2194)</strong>
                     </p>
+
                 </div>
 
                 <div class="card">
+
                     <h3>Fall 2025</h3>
+
                     <p>
                         <strong>Unlocking Generative AI (ENGR 2194)</strong>
                     </p>
+
                     <p>
                         <strong>Python Perspectives (COMPEDU 2194)</strong>
                     </p>
+
                 </div>
 
             </section>
