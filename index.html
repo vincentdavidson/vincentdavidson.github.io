@@ -7,6 +7,7 @@
     <title>Vincent Davidson</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -31,6 +32,8 @@
             padding: 22px 25px;
         }
 
+        /* TOP NAVIGATION */
+
         .top-nav {
             position: sticky;
             top: 0;
@@ -42,14 +45,9 @@
         }
 
         .top-nav ul {
-            list-style: disc;
+            list-style: none; /* BULLETS REMOVED */
             display: flex;
             gap: 26px;
-            margin-left: 18px;
-        }
-
-        .top-nav li {
-            color: #555;
         }
 
         .top-nav a {
@@ -71,11 +69,15 @@
             border-bottom: 1.5px solid #000;
         }
 
+        /* LAYOUT */
+
         .layout {
             display: flex;
             gap: 42px;
             align-items: flex-start;
         }
+
+        /* SIDEBAR */
 
         .sidebar {
             width: 220px;
@@ -84,15 +86,23 @@
             top: 62px;
         }
 
+        /* PROFILE PHOTO */
+
         .profile-photo {
             width: 175px;
             height: 175px;
+
             object-fit: cover;
             object-position: center center;
+
             border-radius: 50%;
+
             display: block;
+
             margin-bottom: 12px;
         }
+
+        /* SIDEBAR TEXT */
 
         .sidebar h2 {
             font-size: 20px;
@@ -107,6 +117,8 @@
             font-size: 13px;
             line-height: 1.35;
         }
+
+        /* CONTENT */
 
         .content {
             flex: 1;
@@ -150,6 +162,8 @@
             text-decoration: underline;
         }
 
+        /* UPDATES */
+
         .updates-list {
             margin-left: 20px;
             margin-top: 8px;
@@ -158,6 +172,8 @@
         .updates-list li {
             margin-bottom: 8px;
         }
+
+        /* PUBLICATIONS */
 
         .publication {
             margin-bottom: 22px;
@@ -173,11 +189,16 @@
             margin-bottom: 5px;
         }
 
+        /* CONTACT */
+
         .contact-links a {
             margin-right: 14px;
         }
 
+        /* MOBILE */
+
         @media (max-width: 850px) {
+
             .layout {
                 flex-direction: column;
             }
@@ -198,24 +219,33 @@
                 flex-wrap: wrap;
                 gap: 22px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <div class="container">
 
+        <!-- TOP NAVIGATION -->
+
         <nav class="top-nav">
+
             <ul>
                 <li><a href="#about" class="nav-link active">About</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#teaching" class="nav-link">Teaching</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+
         </nav>
 
         <div class="layout">
+
+            <!-- SIDEBAR -->
 
             <aside class="sidebar">
 
@@ -238,7 +268,11 @@
 
             </aside>
 
+            <!-- MAIN CONTENT -->
+
             <main class="content">
+
+                <!-- ABOUT -->
 
                 <section id="about">
 
@@ -261,6 +295,8 @@
                         I hold a Master’s degree in Computer Science from Clemson University
                         and a Bachelor of Science in Computer Science from Winston-Salem State University.
                     </p>
+
+                    <!-- UPDATES -->
 
                     <h2>Updates:</h2>
 
@@ -334,6 +370,8 @@
 
                 </section>
 
+                <!-- PUBLICATIONS -->
+
                 <section id="publications">
 
                     <h1>Publications</h1>
@@ -365,6 +403,8 @@
 
                 </section>
 
+                <!-- TEACHING -->
+
                 <section id="teaching">
 
                     <h1>Teaching</h1>
@@ -385,15 +425,19 @@
 
                 </section>
 
+                <!-- CONTACT -->
+
                 <section id="contact">
 
                     <h1>Contact</h1>
 
                     <p class="contact-links">
+
                         <a href="mailto:drvintdave@gmail.com">Gmail</a>
                         <a href="mailto:davidson.805@osu.edu">Ohio State Email</a>
                         <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/">LinkedIn</a>
                         <a href="https://github.com/vincentdavidson">GitHub</a>
+
                     </p>
 
                 </section>
@@ -405,12 +449,16 @@
     </div>
 
     <script>
+
         const sections = document.querySelectorAll("main section");
         const navLinks = document.querySelectorAll(".nav-link");
 
         function setActiveTab(id) {
             navLinks.forEach(link => {
-                link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + id
+                );
             });
         }
 
@@ -434,6 +482,7 @@
         });
 
         sections.forEach(section => observer.observe(section));
+
     </script>
 
 </body>
