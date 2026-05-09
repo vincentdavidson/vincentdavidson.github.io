@@ -7,6 +7,7 @@
     <title>Vincent Davidson</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +22,7 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #ffffff;
             color: #222;
-            line-height: 1.6;
+            line-height: 1.7;
             font-size: 16px;
         }
 
@@ -30,6 +31,8 @@
             margin: 0 auto;
             padding: 30px 25px;
         }
+
+        /* TOP NAV */
 
         .top-nav {
             display: flex;
@@ -48,11 +51,15 @@
             text-decoration: underline;
         }
 
+        /* LAYOUT */
+
         .layout {
             display: flex;
             gap: 55px;
             align-items: flex-start;
         }
+
+        /* SIDEBAR */
 
         .sidebar {
             width: 260px;
@@ -74,13 +81,17 @@
         .sidebar h3 {
             font-size: 22px;
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .sidebar p {
             color: #444;
             font-size: 15px;
             margin-bottom: 12px;
+            line-height: 1.6;
         }
+
+        /* MAIN CONTENT */
 
         .content {
             flex: 1;
@@ -100,14 +111,15 @@
 
         h2 {
             font-size: 24px;
-            margin-top: 30px;
-            margin-bottom: 12px;
+            margin-top: 32px;
+            margin-bottom: 14px;
             font-weight: 600;
         }
 
         h3 {
-            font-size: 19px;
+            font-size: 20px;
             margin-bottom: 8px;
+            font-weight: 600;
         }
 
         p {
@@ -123,35 +135,58 @@
             text-decoration: underline;
         }
 
+        /* UPDATES */
+
         .updates-list {
             margin-left: 22px;
+            margin-top: 12px;
         }
 
         .updates-list li {
-            margin-bottom: 10px;
+            margin-bottom: 14px;
+            color: #374151;
+            font-size: 16px;
+            line-height: 1.7;
         }
 
-        .update-date {
+        .updates-list strong {
+            color: #111827;
+        }
+
+        .updates-list a {
+            color: #2563eb;
+        }
+
+        /* PUBLICATIONS */
+
+        .publication {
+            margin-bottom: 28px;
+        }
+
+        .publication-title {
             font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .card {
-            margin-bottom: 25px;
-        }
-
-        .card-meta {
+        .publication-authors {
             color: #555;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
+
+        /* CONTACT */
 
         .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
+        .contact-links a {
+            margin-right: 16px;
+        }
+
+        /* MOBILE */
+
         @media (max-width: 850px) {
+
             .layout {
                 flex-direction: column;
             }
@@ -171,22 +206,36 @@
             .content {
                 max-width: 100%;
             }
+
+            .profile-photo {
+                width: 190px;
+                height: 190px;
+            }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <div class="page">
 
+        <!-- TOP NAVIGATION -->
+
         <nav class="top-nav">
+
             <a href="#about">About</a>
             <a href="#publications">Publications</a>
             <a href="#teaching">Teaching</a>
             <a href="#contact">Contact</a>
+
         </nav>
 
         <div class="layout">
+
+            <!-- SIDEBAR -->
 
             <aside class="sidebar">
 
@@ -209,11 +258,15 @@
 
             </aside>
 
+            <!-- MAIN CONTENT -->
+
             <main class="content">
+
+                <!-- ABOUT -->
 
                 <section id="about">
 
-                    <h1>Vincent Davidson</h1>
+                    <h1>About</h1>
 
                     <p>
                         I am a Ph.D. candidate in Computer Science and Engineering at
@@ -222,47 +275,70 @@
                     </p>
 
                     <p>
-                        My research focuses on trustworthy and context-aware Large Language Models,
+                        My research focuses on trustworthy and context-aware Large Language Models (LLMs),
                         knowledge graphs, scalable AI systems, and human-centered machine learning.
                         I am particularly interested in building enterprise AI systems that improve
                         interpretability, trustworthiness, and human-AI collaboration.
                     </p>
 
                     <p>
-                        I hold a Master's degree in Computer Science from Clemson University
+                        I hold a Master’s degree in Computer Science from Clemson University
                         and a Bachelor of Science in Computer Science from Winston-Salem State University.
                     </p>
 
-                    <h2>Updates:</h2>
+                    <!-- UPDATES -->
+
+                    <h2>Updates</h2>
 
                     <ul class="updates-list">
 
                         <li>
-                            <span class="update-date">June 2026—</span>
-                            Participating in
+                            <strong>June 2026:</strong>
+                            Participating in the
                             <a href="https://www.databricks.com/dataaisummit/">
                                 Databricks Data + AI Summit
                             </a>.
                         </li>
 
                         <li>
-                            <span class="update-date">April 2026—</span>
-                            Passed Qualifying Exams for PhD in Computer Science and Engineering.
+                            <strong>April 2026:</strong>
+                            Passed the Qualifying Exams for the Ph.D. program in Computer Science and Engineering at
+                            The Ohio State University.
                         </li>
 
                         <li>
-                            <span class="update-date">February 2026—</span>
+                            <strong>February 2026:</strong>
                             Promoted to Specialist, Databricks Engineer at Nationwide.
                         </li>
 
                         <li>
-                            <span class="update-date">October 2025—</span>
-                            Co-led Databricks Generative AI workshop in Phoenix, AZ.
+                            <strong>October 2025:</strong>
+                            Co-led Databricks’ third Generative AI workshop in Phoenix, Arizona,
+                            highlighting the new AgentBricks feature.
                         </li>
 
                         <li>
-                            <span class="update-date">2024—</span>
-                            First publication accepted at Computational Science and Computational Intelligence 2024.
+                            <strong>December 2024:</strong>
+                            Joined Nationwide as a Sr. Analyst, Databricks Engineer.
+                        </li>
+
+                        <li>
+                            <strong>August 2024:</strong>
+                            Started the Ph.D. program in Computer Science and Engineering at
+                            The Ohio State University.
+                        </li>
+
+                        <li>
+                            <strong>August 2024:</strong>
+                            Graduated with a Master’s degree in Computer Science from Clemson University.
+                        </li>
+
+                        <li>
+                            <strong>2024:</strong>
+                            First publication accepted at Computational Science and Computational Intelligence (CSCI) 2024:
+                            <em>
+                                Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin
+                            </em>.
                             <a href="#publications">View publication</a>.
                         </li>
 
@@ -270,28 +346,27 @@
 
                 </section>
 
+                <!-- PUBLICATIONS -->
+
                 <section id="publications">
 
                     <h1>Publications</h1>
 
-                    <div class="card">
+                    <div class="publication">
 
-                        <h3>
+                        <div class="publication-title">
                             Application of Human Centered Reinforcement Learning
                             to Develop an Air Battle Management Operator Digital Twin
-                        </h3>
+                        </div>
 
-                        <p class="card-meta">
+                        <div class="publication-authors">
                             Courtney L. Crooks, Jasmine Davidson, Vincent Davidson,
                             Patrick Tyne, Katy Wills, Peter Lebedev, Tyler Rowe,
-                            Eric Tang, and Jessica Inman<br>
-                            Springer, 2024
-                        </p>
+                            Eric Tang, and Jessica Inman
+                        </div>
 
                         <p>
-                            Research on applying human-centered reinforcement learning
-                            techniques to develop a digital twin for air battle
-                            management operators.
+                            Springer, 2024
                         </p>
 
                         <p>
@@ -304,6 +379,8 @@
 
                 </section>
 
+                <!-- TEACHING -->
+
                 <section id="teaching">
 
                     <h1>Teaching</h1>
@@ -311,29 +388,44 @@
                     <h3>Spring 2026</h3>
 
                     <p>
-                        Unlocking Generative AI — ENGR 2194<br>
-                        Python Perspectives — COMPEDU 2194
+                        Unlocking Generative AI (ENGR 2194)<br>
+                        Python Perspectives (COMPEDU 2194)
                     </p>
 
                     <h3>Fall 2025</h3>
 
                     <p>
-                        Unlocking Generative AI — ENGR 2194<br>
-                        Python Perspectives — COMPEDU 2194
+                        Unlocking Generative AI (ENGR 2194)<br>
+                        Python Perspectives (COMPEDU 2194)
                     </p>
 
                 </section>
+
+                <!-- CONTACT -->
 
                 <section id="contact">
 
                     <h1>Contact</h1>
 
-                    <p>
-                        <a href="mailto:drvintdave@gmail.com">Gmail</a> |
-                        <a href="mailto:davidson.805@osu.edu">Ohio State Email</a> |
-                        <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/">LinkedIn</a> |
-                        <a href="https://github.com/vincentdavidson">GitHub</a>
-                    </p>
+                    <div class="contact-links">
+
+                        <a href="mailto:drvintdave@gmail.com">
+                            Gmail
+                        </a>
+
+                        <a href="mailto:davidson.805@osu.edu">
+                            Ohio State Email
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://github.com/vincentdavidson">
+                            GitHub
+                        </a>
+
+                    </div>
 
                 </section>
 
