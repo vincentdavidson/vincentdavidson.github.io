@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vincent Davidson, MS</title>
 
+    <!-- FONT AWESOME ICONS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -30,6 +35,8 @@
             margin: 0 auto;
             padding: 22px 25px;
         }
+
+        /* TOP NAVIGATION */
 
         .top-nav {
             position: sticky;
@@ -59,11 +66,15 @@
             text-decoration: underline;
         }
 
+        /* MAIN LAYOUT */
+
         .layout {
             display: flex;
             gap: 42px;
             align-items: flex-start;
         }
+
+        /* SIDEBAR */
 
         .sidebar {
             width: 220px;
@@ -96,25 +107,27 @@
             line-height: 1.35;
         }
 
+        /* SOCIAL ICONS */
+
         .social-icons {
             margin-top: 14px;
             display: flex;
-            gap: 14px;
+            gap: 16px;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .social-icons a {
             color: #555;
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.2s ease;
         }
 
         .social-icons a:hover {
             color: #000;
-            text-decoration: underline;
         }
+
+        /* CONTENT */
 
         .content {
             flex: 1;
@@ -158,6 +171,8 @@
             text-decoration: underline;
         }
 
+        /* UPDATES */
+
         .updates-list {
             margin-left: 34px;
             padding-left: 12px;
@@ -168,6 +183,8 @@
             margin-bottom: 8px;
             padding-left: 4px;
         }
+
+        /* PUBLICATIONS */
 
         .publication {
             margin-bottom: 22px;
@@ -183,7 +200,10 @@
             margin-bottom: 5px;
         }
 
+        /* MOBILE */
+
         @media (max-width: 850px) {
+
             .layout {
                 flex-direction: column;
             }
@@ -204,23 +224,40 @@
                 display: inline-block;
                 margin-bottom: 8px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <div class="container">
 
+        <!-- TOP NAVIGATION -->
+
         <nav class="top-nav">
-            <a href="#name" class="nav-link active">Vincent Andrew Davidson</a>
+
+            <a href="#about" class="nav-link active">Vincent Davidson</a>
+
+
             
+
             <a href="#publications" class="nav-link">Publications</a>
+
             <a href="#teaching" class="nav-link">Teaching</a>
-            <a href="cv.pdf" target="_blank">CV</a>
+
+            <a href="#contact" class="nav-link">Contact</a>
+
+            <!-- CV TAB -->
+            <a href="cv.pdf" target="images/vincent2026">CV</a>
+
         </nav>
 
         <div class="layout">
+
+            <!-- SIDEBAR -->
 
             <aside class="sidebar">
 
@@ -229,32 +266,44 @@
                      class="profile-photo">
 
                 <h2>Vincent Davidson</h2>
-
-                <p>
-                    Ph.D. Candidate<br>
-                    Department of Computer Science and Engineering<br>
-                    The Ohio State University
-                </p>
-
-                <p>
-                    Specialist, Databricks Engineer<br>
-                    Enterprise Data Office<br>
-                    Nationwide
-                </p>
+                <!-- SOCIAL ICONS -->
 
                 <div class="social-icons">
-                    <a href="mailto:davidson.805@osu.edu">Email</a>
-                    <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/" target="_blank">LinkedIn</a>
-                    <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+
+                    <!-- EMAIL -->
+                    <a href="mailto:davidson.805@osu.edu"
+                       target="_blank"
+                       aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                    <!-- LINKEDIN -->
+                    <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/"
+                       target="_blank"
+                       aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                    <!-- GOOGLE SCHOLAR -->
+                    <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao"
+                       target="_blank"
+                       aria-label="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+
                 </div>
 
             </aside>
 
+            <!-- MAIN CONTENT -->
+
             <main class="content">
+
+                <!-- ABOUT -->
 
                 <section id="about">
 
-                    <h1>Vincent Davidson</h1>
+                    <h1>About Me</h1>
 
                     <p>
                         I am a Ph.D. candidate in Computer Science and Engineering at
@@ -274,9 +323,10 @@
                         and a Bachelor of Science in Computer Science from Winston-Salem State University.
                     </p>
 
-                    <h2>Updates:</h2>
+                    <h2>Recent News:</h2>
 
                     <ul class="updates-list">
+
                         <li>
                             <strong>June 2026—</strong>
                             Participant of AI/ML training sessions at the
@@ -333,11 +383,16 @@
                             <em>
                                 Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin.
                             </em>
-                            <a href="#publications">View publication</a>.
+                            <a href="#publications">
+                                View publication
+                            </a>.
                         </li>
+
                     </ul>
 
                 </section>
+
+                <!-- PUBLICATIONS -->
 
                 <section id="publications">
 
@@ -368,6 +423,8 @@
 
                 </section>
 
+                <!-- TEACHING -->
+
                 <section id="teaching">
 
                     <h1>Teaching</h1>
@@ -388,6 +445,17 @@
 
                 </section>
 
+                <!-- CONTACT -->
+
+                <section id="contact">
+
+                    <h1>Contact</h1>
+
+                    <p>
+                        Feel free to connect with me through email,
+                        LinkedIn, or Google Scholar.
+                    </p>
+
                 </section>
 
             </main>
@@ -396,36 +464,46 @@
 
     </div>
 
+    <!-- ACTIVE TAB SCROLLING -->
+
     <script>
+
         const sections = document.querySelectorAll("main section");
         const navLinks = document.querySelectorAll(".nav-link");
 
         function setActiveTab(id) {
+
             navLinks.forEach(link => {
-                link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + id
+                );
+
             });
+
         }
 
-        navLinks.forEach(link => {
-            link.addEventListener("click", function () {
-                const id = this.getAttribute("href").replace("#", "");
-                setActiveTab(id);
-            });
-        });
+        window.addEventListener("scroll", () => {
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveTab(entry.target.id);
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop = section.offsetTop - 140;
+
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
                 }
+
             });
-        }, {
-            root: null,
-            rootMargin: "-25% 0px -60% 0px",
-            threshold: 0
+
+            if (current) {
+                setActiveTab(current);
+            }
+
         });
 
-        sections.forEach(section => observer.observe(section));
     </script>
 
 </body>
