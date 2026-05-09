@@ -19,107 +19,102 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             background: #ffffff;
             color: #222;
-            line-height: 1.7;
+            line-height: 1.65;
             font-size: 16px;
         }
 
-        .page {
-            max-width: 1100px;
+        .container {
+            max-width: 1050px;
             margin: 0 auto;
-            padding: 30px 25px;
+            padding: 35px 25px;
         }
 
-        /* TOP NAVIGATION */
+        /* NAVIGATION */
 
         .top-nav {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 35px;
-            font-size: 16px;
+            margin-bottom: 40px;
         }
 
         .top-nav a {
             color: #555;
             text-decoration: none;
+            margin-right: 22px;
+            font-size: 16px;
         }
 
         .top-nav a:hover {
-            color: #000;
             text-decoration: underline;
+            color: #000;
         }
 
         /* LAYOUT */
 
         .layout {
             display: flex;
-            gap: 55px;
+            gap: 60px;
             align-items: flex-start;
         }
 
         /* SIDEBAR */
 
         .sidebar {
-            width: 260px;
-            min-width: 260px;
+            width: 250px;
+            min-width: 250px;
             position: sticky;
-            top: 25px;
-            text-align: center;
+            top: 30px;
         }
-
-        /* PROFILE PHOTO */
 
         .profile-photo {
             width: 220px;
             height: 220px;
 
-            border-radius: 8px;
-
             object-fit: cover;
-
             object-position: center top;
+
+            border-radius: 4px;
 
             display: block;
 
-            margin: 0 auto 18px auto;
+            margin-bottom: 20px;
         }
 
-        .sidebar h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+        .sidebar h2 {
+            font-size: 28px;
             font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .sidebar p {
-            color: #444;
-            font-size: 15px;
+            color: #555;
             margin-bottom: 12px;
+            font-size: 15px;
             line-height: 1.6;
         }
 
-        /* MAIN CONTENT */
+        /* CONTENT */
 
         .content {
             flex: 1;
-            max-width: 760px;
+            max-width: 720px;
         }
 
         section {
-            margin-bottom: 80px;
+            margin-bottom: 75px;
             scroll-margin-top: 30px;
         }
 
         h1 {
-            font-size: 36px;
-            margin-bottom: 18px;
+            font-size: 34px;
+            margin-bottom: 20px;
             font-weight: 600;
         }
 
         h2 {
             font-size: 24px;
-            margin-top: 32px;
+            margin-top: 30px;
             margin-bottom: 14px;
             font-weight: 600;
         }
@@ -131,7 +126,7 @@
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         a {
@@ -147,22 +142,11 @@
 
         .updates-list {
             margin-left: 22px;
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         .updates-list li {
             margin-bottom: 14px;
-            color: #374151;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        .updates-list strong {
-            color: #111827;
-        }
-
-        .updates-list a {
-            color: #2563eb;
         }
 
         /* PUBLICATIONS */
@@ -173,19 +157,15 @@
 
         .publication-title {
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .publication-authors {
             color: #555;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         /* CONTACT */
-
-        .contact-links {
-            margin-top: 15px;
-        }
 
         .contact-links a {
             margin-right: 16px;
@@ -201,23 +181,13 @@
 
             .sidebar {
                 width: 100%;
-                min-width: 100%;
                 position: relative;
                 top: 0;
             }
 
-            .top-nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .content {
-                max-width: 100%;
-            }
-
             .profile-photo {
-                width: 190px;
-                height: 190px;
+                width: 180px;
+                height: 180px;
             }
 
         }
@@ -228,7 +198,7 @@
 
 <body>
 
-    <div class="page">
+    <div class="container">
 
         <!-- TOP NAVIGATION -->
 
@@ -251,7 +221,7 @@
                      alt="Vincent Davidson"
                      class="profile-photo">
 
-                <h3>Vincent Davidson</h3>
+                <h2>Vincent Davidson</h2>
 
                 <p>
                     Ph.D. Candidate<br>
@@ -317,7 +287,7 @@
                         <li>
                             <strong>February 2026:</strong>
                             Promoted to Specialist, Databricks Engineer at Nationwide.
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_im-happy-to-share-that-ive-been-promoted-activity-7432881523097296896-kEeO?utm_source=share&utm_medium=member_desktop&rcm=ACoAABmYzdQB3SWedgAOAGRLl_CXaPz2B2gkag8">
+                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_im-happy-to-share-that-ive-been-promoted-activity-7432881523097296896-kEeO">
                                 Learn more
                             </a>.
                         </li>
@@ -326,7 +296,7 @@
                             <strong>October 2025:</strong>
                             Co-led Databricks’ third Generative AI workshop in Phoenix, Arizona,
                             highlighting the new AgentBricks feature.
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_small-town-kid-with-big-goals-i-am-extremely-activity-7389793603721515009--EOw?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABmYzdQB3SWedgAOAGRLl_CXaPz2B2gkag8">
+                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_small-town-kid-with-big-goals-i-am-extremely-activity-7389793603721515009--EOw">
                                 Learn more
                             </a>.
                         </li>
@@ -334,7 +304,7 @@
                         <li>
                             <strong>December 2024:</strong>
                             Joined Nationwide as a Sr. Analyst, Databricks Engineer.
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_newnationwider-offeraccepted-teamnationwide-activity-7270432714703474689-Gr3g?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABmYzdQB3SWedgAOAGRLl_CXaPz2B2gkag8">
+                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_newnationwider-offeraccepted-teamnationwide-activity-7270432714703474689-Gr3g">
                                 Learn more
                             </a>.
                         </li>
@@ -348,7 +318,7 @@
                         <li>
                             <strong>August 2024:</strong>
                             Graduated with a Master’s degree in Computer Science from Clemson University.
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_gobuckeyes-activity-7228764054167662593-65i_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABmYzdQB3SWedgAOAGRLl_CXaPz2B2gkag8">
+                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_gobuckeyes-activity-7228764054167662593-65i_">
                                 Learn more
                             </a>.
                         </li>
@@ -429,7 +399,7 @@
 
                     <h1>Contact</h1>
 
-                    <div class="contact-links">
+                    <p class="contact-links">
 
                         <a href="mailto:drvintdave@gmail.com">
                             Gmail
@@ -447,7 +417,7 @@
                             GitHub
                         </a>
 
-                    </div>
+                    </p>
 
                 </section>
 
