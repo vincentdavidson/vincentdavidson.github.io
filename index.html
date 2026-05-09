@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincent Davidson</title>
+    <title>Vincent Davidson, MS</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -28,12 +31,13 @@
             padding: 22px 25px;
         }
 
-        /* TOP NAVIGATION */
-
         .top-nav {
+            position: sticky;
+            top: 0;
             background: #ffffff;
             padding: 10px 0 12px 0;
             margin-bottom: 24px;
+            z-index: 1000;
         }
 
         .top-nav a {
@@ -55,21 +59,17 @@
             text-decoration: underline;
         }
 
-        /* MAIN LAYOUT */
-
         .layout {
             display: flex;
             gap: 42px;
             align-items: flex-start;
         }
 
-        /* SIDEBAR */
-
         .sidebar {
             width: 220px;
             min-width: 220px;
             position: sticky;
-            top: 22px;
+            top: 62px;
         }
 
         .profile-photo {
@@ -96,8 +96,6 @@
             line-height: 1.35;
         }
 
-        /* SOCIAL ICONS */
-
         .social-icons {
             margin-top: 14px;
             display: flex;
@@ -115,21 +113,17 @@
 
         .social-icons a:hover {
             color: #000;
+            text-decoration: underline;
         }
-
-        /* CONTENT */
 
         .content {
             flex: 1;
             max-width: 700px;
         }
 
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active {
-            display: block;
+        section {
+            margin-bottom: 75px;
+            scroll-margin-top: 80px;
         }
 
         h1 {
@@ -164,8 +158,6 @@
             text-decoration: underline;
         }
 
-        /* UPDATES */
-
         .updates-list {
             margin-left: 34px;
             padding-left: 12px;
@@ -176,8 +168,6 @@
             margin-bottom: 8px;
             padding-left: 4px;
         }
-
-        /* PUBLICATIONS */
 
         .publication {
             margin-bottom: 22px;
@@ -193,14 +183,7 @@
             margin-bottom: 5px;
         }
 
-        .contact-links a {
-            margin-right: 14px;
-        }
-
-        /* MOBILE */
-
         @media (max-width: 850px) {
-
             .layout {
                 flex-direction: column;
             }
@@ -221,42 +204,23 @@
                 display: inline-block;
                 margin-bottom: 8px;
             }
-
         }
-
     </style>
-
 </head>
 
 <body>
 
     <div class="container">
 
-        <!-- TOP NAVIGATION -->
-
         <nav class="top-nav">
-
-            <a href="#about"
-               class="nav-link active"
-               data-page="about">About</a>
-
-            <a href="#publications"
-               class="nav-link"
-               data-page="publications">Publications</a>
-
-            <a href="#teaching"
-               class="nav-link"
-               data-page="teaching">Teaching</a>
-
-            <a href="#contact"
-               class="nav-link"
-               data-page="contact">Contact</a>
-
+            <a href="#name" class="nav-link active">Vincent Andrew Davidson</a>
+            
+            <a href="#publications" class="nav-link">Publications</a>
+            <a href="#teaching" class="nav-link">Teaching</a>
+            <a href="cv.pdf" target="_blank">CV</a>
         </nav>
 
         <div class="layout">
-
-            <!-- SIDEBAR -->
 
             <aside class="sidebar">
 
@@ -278,39 +242,17 @@
                     Nationwide
                 </p>
 
-                <!-- SOCIAL LINKS -->
-
                 <div class="social-icons">
-
-                    <!-- EMAIL -->
-                    <a href="mailto:davidson.805@osu.edu"
-                       target="_blank">
-                        Email
-                    </a>
-
-                    <!-- LINKEDIN -->
-                    <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/"
-                       target="_blank">
-                        LinkedIn
-                    </a>
-
-                    <!-- GOOGLE SCHOLAR -->
-                    <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao"
-                       target="_blank">
-                        Google Scholar
-                    </a>
-
+                    <a href="mailto:davidson.805@osu.edu">Email</a>
+                    <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
                 </div>
 
             </aside>
 
-            <!-- MAIN CONTENT -->
-
             <main class="content">
 
-                <!-- ABOUT PAGE -->
-
-                <section id="about" class="page-section active">
+                <section id="about">
 
                     <h1>Vincent Davidson</h1>
 
@@ -335,10 +277,9 @@
                     <h2>Updates:</h2>
 
                     <ul class="updates-list">
-
                         <li>
                             <strong>June 2026—</strong>
-                            Live AI/ML training sessions at the
+                            Participant of AI/ML training sessions at the
                             <a href="https://www.databricks.com/dataaisummit/">
                                 Databricks Data + AI Summit
                             </a> in San Francisco, CA!
@@ -392,20 +333,13 @@
                             <em>
                                 Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin.
                             </em>
-                            <a href="#publications"
-                               class="internal-link"
-                               data-page="publications">
-                                View publication
-                            </a>.
+                            <a href="#publications">View publication</a>.
                         </li>
-
                     </ul>
 
                 </section>
 
-                <!-- PUBLICATIONS PAGE -->
-
-                <section id="publications" class="page-section">
+                <section id="publications">
 
                     <h1>Publications</h1>
 
@@ -434,9 +368,7 @@
 
                 </section>
 
-                <!-- TEACHING PAGE -->
-
-                <section id="teaching" class="page-section">
+                <section id="teaching">
 
                     <h1>Teaching</h1>
 
@@ -456,17 +388,6 @@
 
                 </section>
 
-                <!-- CONTACT PAGE -->
-
-                <section id="contact" class="page-section">
-
-                    <h1>Contact</h1>
-
-                    <p>
-                        Feel free to connect with me through email,
-                        LinkedIn, or Google Scholar.
-                    </p>
-
                 </section>
 
             </main>
@@ -476,73 +397,35 @@
     </div>
 
     <script>
-
+        const sections = document.querySelectorAll("main section");
         const navLinks = document.querySelectorAll(".nav-link");
-        const pageSections = document.querySelectorAll(".page-section");
-        const internalLinks = document.querySelectorAll(".internal-link");
 
-        function showPage(pageId) {
-
-            pageSections.forEach(section => {
-                section.classList.remove("active");
-            });
-
+        function setActiveTab(id) {
             navLinks.forEach(link => {
-                link.classList.remove("active");
+                link.classList.toggle("active", link.getAttribute("href") === "#" + id);
             });
-
-            document.getElementById(pageId).classList.add("active");
-
-            const activeLink =
-                document.querySelector(`.nav-link[data-page="${pageId}"]`);
-
-            if (activeLink) {
-                activeLink.classList.add("active");
-            }
-
-            window.location.hash = pageId;
         }
 
         navLinks.forEach(link => {
-
-            link.addEventListener("click", function(event) {
-
-                event.preventDefault();
-
-                const pageId = this.getAttribute("data-page");
-
-                showPage(pageId);
-
+            link.addEventListener("click", function () {
+                const id = this.getAttribute("href").replace("#", "");
+                setActiveTab(id);
             });
-
         });
 
-        internalLinks.forEach(link => {
-
-            link.addEventListener("click", function(event) {
-
-                event.preventDefault();
-
-                const pageId = this.getAttribute("data-page");
-
-                showPage(pageId);
-
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveTab(entry.target.id);
+                }
             });
-
+        }, {
+            root: null,
+            rootMargin: "-25% 0px -60% 0px",
+            threshold: 0
         });
 
-        window.addEventListener("load", function() {
-
-            const hash = window.location.hash.replace("#", "");
-
-            if (hash && document.getElementById(hash)) {
-                showPage(hash);
-            } else {
-                showPage("about");
-            }
-
-        });
-
+        sections.forEach(section => observer.observe(section));
     </script>
 
 </body>
