@@ -1,2 +1,2 @@
-# vincentdavidson.github.io/vincentdavidson.com
+# vincentdavidson.github.io
 Professional Website
