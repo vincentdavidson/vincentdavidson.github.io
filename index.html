@@ -11,6 +11,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -27,10 +28,16 @@
             line-height: 1.55;
             font-size: 14px;
             min-height: 100vh;
+
             background-color: #ffffff;
+
             background-image:
-                linear-gradient(rgba(255,255,255,0.84), rgba(255,255,255,0.84)),
+                linear-gradient(
+                    rgba(255,255,255,0.84),
+                    rgba(255,255,255,0.84)
+                ),
                 url("images/clemson.jpg");
+
             background-repeat: repeat;
             background-size: 135px 135px;
             background-position: 0 0;
@@ -42,6 +49,8 @@
             margin: 0 auto;
             padding: 22px 25px;
         }
+
+        /* NAVIGATION */
 
         .top-nav {
             position: sticky;
@@ -71,32 +80,47 @@
             text-decoration: underline;
         }
 
+        /* LAYOUT */
+
         .layout {
             display: flex;
             gap: 42px;
             align-items: flex-start;
         }
 
+        /* SIDEBAR */
+
         .sidebar {
             width: 220px;
             min-width: 220px;
             position: sticky;
             top: 62px;
+
             background: rgba(255,255,255,0.90);
+
             padding: 18px;
             border-radius: 16px;
         }
 
+        /* PROFILE PHOTO */
+
         .profile-photo {
             width: 175px;
             height: 175px;
+
             object-fit: cover;
             object-position: center center;
+
             border-radius: 50%;
+
             display: block;
+
             margin-bottom: 12px;
+
             border: 3px solid white;
+
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
             background: white;
         }
 
@@ -106,6 +130,8 @@
             margin-bottom: 6px;
             line-height: 1.2;
         }
+
+        /* SOCIAL ICONS */
 
         .social-icons {
             margin-top: 10px;
@@ -149,10 +175,14 @@
             color: #C13584;
         }
 
+        /* CONTENT */
+
         .content {
             flex: 1;
             max-width: 700px;
+
             background: rgba(255,255,255,0.90);
+
             padding: 18px;
             border-radius: 16px;
         }
@@ -197,6 +227,8 @@
             text-decoration: underline;
         }
 
+        /* LISTS */
+
         .updates-list,
         .awards-list {
             margin-left: 34px;
@@ -210,27 +242,54 @@
             padding-left: 4px;
         }
 
+        /* CONTENT BLOCKS */
+
         .publication,
-        .article,
         .award {
             margin-bottom: 22px;
         }
 
         .publication-title,
-        .article-title,
         .award-title {
             font-weight: 600;
             margin-bottom: 5px;
         }
 
         .publication-authors,
-        .article-meta,
         .award-meta {
             color: #555;
             margin-bottom: 5px;
         }
 
+        /* ARTICLE PREVIEW CARD */
+
+        .article-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 16px;
+            background: rgba(255,255,255,0.95);
+            margin-bottom: 20px;
+        }
+
+        .article-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .article-meta {
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .article-summary {
+            margin-bottom: 10px;
+        }
+
+        /* MOBILE */
+
         @media (max-width: 850px) {
+
             .layout {
                 flex-direction: column;
             }
@@ -251,24 +310,61 @@
                 display: inline-block;
                 margin-bottom: 8px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <div class="container">
 
+        <!-- NAVIGATION -->
+
         <nav class="top-nav">
-            <a href="#about" class="nav-link active" data-page="about">About</a>
-            <a href="#publications" class="nav-link" data-page="publications">Publications</a>
-            <a href="#teaching" class="nav-link" data-page="teaching">Teaching</a>
-            <a href="#articles" class="nav-link" data-page="articles">Articles</a>
-            <a href="#awards" class="nav-link" data-page="awards">Awards</a>
-            <a href="curriculum%20vitae/Vince2026CV.pdf" target="_blank">CV</a>
+
+            <a href="#about"
+               class="nav-link active"
+               data-page="about">
+               About
+            </a>
+
+            <a href="#publications"
+               class="nav-link"
+               data-page="publications">
+               Publications
+            </a>
+
+            <a href="#teaching"
+               class="nav-link"
+               data-page="teaching">
+               Teaching
+            </a>
+
+            <a href="#articles"
+               class="nav-link"
+               data-page="articles">
+               Articles
+            </a>
+
+            <a href="#awards"
+               class="nav-link"
+               data-page="awards">
+               Awards
+            </a>
+
+            <a href="curriculum%20vitae/Vince2026CV.pdf"
+               target="_blank">
+               CV
+            </a>
+
         </nav>
 
         <div class="layout">
+
+            <!-- SIDEBAR -->
 
             <aside class="sidebar">
 
@@ -277,6 +373,8 @@
                      class="profile-photo">
 
                 <h2>Vincent Davidson</h2>
+
+                <!-- SOCIAL ICONS -->
 
                 <div class="social-icons">
 
@@ -317,7 +415,11 @@
 
             </aside>
 
+            <!-- MAIN CONTENT -->
+
             <main class="content">
+
+                <!-- ABOUT -->
 
                 <section id="about" class="page-section active">
 
@@ -344,6 +446,7 @@
                     <h2>Recent News:</h2>
 
                     <ul class="updates-list">
+
                         <li>
                             <strong>June 2026—</strong>
                             Participant of AI/ML training sessions at the
@@ -407,15 +510,19 @@
                                 View publication
                             </a>.
                         </li>
+
                     </ul>
 
                 </section>
+
+                <!-- PUBLICATIONS -->
 
                 <section id="publications" class="page-section">
 
                     <h1>Publications</h1>
 
                     <div class="publication">
+
                         <div class="publication-title">
                             Application of Human Centered Reinforcement Learning
                             to Develop an Air Battle Management Operator Digital Twin
@@ -433,9 +540,12 @@
                                 Read on Springer →
                             </a>
                         </p>
+
                     </div>
 
                 </section>
+
+                <!-- TEACHING -->
 
                 <section id="teaching" class="page-section">
 
@@ -457,28 +567,40 @@
 
                 </section>
 
+                <!-- ARTICLES -->
+
                 <section id="articles" class="page-section">
 
                     <h1>Articles</h1>
 
-                    <div class="article">
+                    <div class="article-card">
+
                         <div class="article-title">
                             Supporting Each Other Through Graduate School
                         </div>
 
                         <div class="article-meta">
-                            Clemson University News
+                            Clemson News · September 28, 2022
                         </div>
+
+                        <p class="article-summary">
+                            Clemson News highlighted Vincent and Jasmine Davidson as a married couple
+                            beginning their Ph.D. journeys together at Clemson University while
+                            supporting each other through graduate school.
+                        </p>
 
                         <p>
                             <a href="https://news.clemson.edu/supporting-each-other-through-graduate-school/"
                                target="_blank">
-                                Read article →
+                                Read full article →
                             </a>
                         </p>
+
                     </div>
 
                 </section>
+
+                <!-- AWARDS -->
 
                 <section id="awards" class="page-section">
 
@@ -559,12 +681,21 @@
 
     </div>
 
+    <!-- PAGE NAVIGATION -->
+
     <script>
-        const navLinks = document.querySelectorAll(".nav-link");
-        const pageSections = document.querySelectorAll(".page-section");
-        const internalLinks = document.querySelectorAll(".internal-link");
+
+        const navLinks =
+            document.querySelectorAll(".nav-link");
+
+        const pageSections =
+            document.querySelectorAll(".page-section");
+
+        const internalLinks =
+            document.querySelectorAll(".internal-link");
 
         function showPage(pageId, addToHistory = true) {
+
             pageSections.forEach(section => {
                 section.classList.remove("active");
             });
@@ -573,66 +704,96 @@
                 link.classList.remove("active");
             });
 
-            const selectedPage = document.getElementById(pageId);
+            const selectedPage =
+                document.getElementById(pageId);
 
             if (selectedPage) {
                 selectedPage.classList.add("active");
             }
 
-            const selectedTab = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            const selectedTab =
+                document.querySelector(`.nav-link[data-page="${pageId}"]`);
 
             if (selectedTab) {
                 selectedTab.classList.add("active");
             }
 
             if (addToHistory) {
+
                 history.pushState(
                     { page: pageId },
                     "",
                     "#" + pageId
                 );
+
             }
+
         }
 
         navLinks.forEach(link => {
+
             link.addEventListener("click", function(event) {
+
                 event.preventDefault();
 
-                const pageId = this.getAttribute("data-page");
+                const pageId =
+                    this.getAttribute("data-page");
 
                 showPage(pageId, true);
+
             });
+
         });
 
         internalLinks.forEach(link => {
+
             link.addEventListener("click", function(event) {
+
                 event.preventDefault();
 
-                const pageId = this.getAttribute("data-page");
+                const pageId =
+                    this.getAttribute("data-page");
 
                 showPage(pageId, true);
+
             });
+
         });
 
         window.addEventListener("popstate", function() {
-            const hash = window.location.hash.replace("#", "");
+
+            const hash =
+                window.location.hash.replace("#", "");
 
             if (hash && document.getElementById(hash)) {
+
                 showPage(hash, false);
+
             } else {
+
                 showPage("about", false);
+
             }
+
         });
 
         window.addEventListener("load", function() {
-            const hash = window.location.hash.replace("#", "");
+
+            const hash =
+                window.location.hash.replace("#", "");
 
             if (hash && document.getElementById(hash)) {
+
                 showPage(hash, false);
+
             } else {
+
                 showPage("about", false);
+
             }
+
         });
+
     </script>
 
 </body>
