@@ -11,6 +11,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -49,6 +50,8 @@
             padding: 22px 25px;
         }
 
+        /* TOP NAVIGATION */
+
         .top-nav {
             position: sticky;
             top: 0;
@@ -77,32 +80,47 @@
             text-decoration: underline;
         }
 
+        /* MAIN LAYOUT */
+
         .layout {
             display: flex;
             gap: 42px;
             align-items: flex-start;
         }
 
+        /* SIDEBAR */
+
         .sidebar {
             width: 220px;
             min-width: 220px;
             position: sticky;
             top: 62px;
+
             background: rgba(255,255,255,0.90);
+
             padding: 18px;
             border-radius: 16px;
         }
 
+        /* PROFILE PHOTO */
+
         .profile-photo {
             width: 175px;
             height: 175px;
+
             object-fit: cover;
             object-position: center center;
+
             border-radius: 50%;
+
             display: block;
+
             margin-bottom: 12px;
+
             border: 3px solid white;
+
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
             background: white;
         }
 
@@ -112,6 +130,8 @@
             margin-bottom: 6px;
             line-height: 1.2;
         }
+
+        /* SOCIAL ICONS */
 
         .social-icons {
             margin-top: 10px;
@@ -131,6 +151,8 @@
             color: #000;
         }
 
+        /* LINKEDIN */
+
         .social-icons a.linkedin-icon {
             color: #0A66C2;
         }
@@ -138,6 +160,8 @@
         .social-icons a.linkedin-icon:hover {
             color: #004182;
         }
+
+        /* X / TWITTER */
 
         .social-icons a.x-icon {
             color: #000000;
@@ -147,10 +171,24 @@
             color: #222222;
         }
 
+        /* INSTAGRAM */
+
+        .social-icons a.instagram-icon {
+            color: #E1306C;
+        }
+
+        .social-icons a.instagram-icon:hover {
+            color: #C13584;
+        }
+
+        /* CONTENT */
+
         .content {
             flex: 1;
             max-width: 700px;
+
             background: rgba(255,255,255,0.90);
+
             padding: 18px;
             border-radius: 16px;
         }
@@ -195,6 +233,8 @@
             text-decoration: underline;
         }
 
+        /* LISTS */
+
         .updates-list,
         .awards-list {
             margin-left: 34px;
@@ -207,6 +247,8 @@
             margin-bottom: 8px;
             padding-left: 4px;
         }
+
+        /* PUBLICATIONS */
 
         .publication,
         .award {
@@ -225,7 +267,10 @@
             margin-bottom: 5px;
         }
 
+        /* MOBILE */
+
         @media (max-width: 850px) {
+
             .layout {
                 flex-direction: column;
             }
@@ -246,23 +291,55 @@
                 display: inline-block;
                 margin-bottom: 8px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
     <div class="container">
 
+        <!-- NAVIGATION -->
+
         <nav class="top-nav">
-            <a href="#about" class="nav-link active" data-page="about">About</a>
-            <a href="#publications" class="nav-link" data-page="publications">Publications</a>
-            <a href="#teaching" class="nav-link" data-page="teaching">Teaching</a>
-            <a href="#awards" class="nav-link" data-page="awards">Awards</a>
-            <a href="curriculum%20vitae/Vince2026CV.pdf" target="_blank">CV</a>
+
+            <a href="#about"
+               class="nav-link active"
+               data-page="about">
+               About
+            </a>
+
+            <a href="#publications"
+               class="nav-link"
+               data-page="publications">
+               Publications
+            </a>
+
+            <a href="#teaching"
+               class="nav-link"
+               data-page="teaching">
+               Teaching
+            </a>
+
+            <a href="#awards"
+               class="nav-link"
+               data-page="awards">
+               Awards
+            </a>
+
+            <a href="curriculum%20vitae/Vince2026CV.pdf"
+               target="_blank">
+               CV
+            </a>
+
         </nav>
 
         <div class="layout">
+
+            <!-- SIDEBAR -->
 
             <aside class="sidebar">
 
@@ -272,12 +349,19 @@
 
                 <h2>Vincent Davidson</h2>
 
+                <!-- SOCIAL ICONS -->
+
                 <div class="social-icons">
+
+                    <!-- EMAIL -->
+
                     <a href="mailto:davidson.805@osu.edu"
                        target="_blank"
                        aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
+
+                    <!-- LINKEDIN -->
 
                     <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/"
                        target="_blank"
@@ -286,11 +370,15 @@
                         <i class="fab fa-linkedin"></i>
                     </a>
 
+                    <!-- GOOGLE SCHOLAR -->
+
                     <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao"
                        target="_blank"
                        aria-label="Google Scholar">
                         <i class="fas fa-graduation-cap"></i>
                     </a>
+
+                    <!-- X / TWITTER -->
 
                     <a href="https://x.com/VncntDvdsn"
                        target="_blank"
@@ -298,11 +386,25 @@
                        class="x-icon">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
+
+                    <!-- INSTAGRAM -->
+
+                    <a href="https://www.instagram.com/drvintdave/"
+                       target="_blank"
+                       aria-label="Instagram"
+                       class="instagram-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
                 </div>
 
             </aside>
 
+            <!-- MAIN CONTENT -->
+
             <main class="content">
+
+                <!-- ABOUT -->
 
                 <section id="about" class="page-section active">
 
@@ -311,7 +413,7 @@
                     <p>
                         I am a Ph.D. candidate in Computer Science and Engineering at
                         The Ohio State University and currently serve as a Specialist,
-                        Databricks Engineer at Nationwide.
+                        Databricks Engineer at Nationwide Headquarters.
                     </p>
 
                     <p>
@@ -329,12 +431,14 @@
                     <h2>Recent News:</h2>
 
                     <ul class="updates-list">
+
                         <li>
                             <strong>June 2026—</strong>
                             Participant of AI/ML training sessions at the
                             <a href="https://www.databricks.com/dataaisummit/">
                                 Databricks Data + AI Summit
-                            </a> in San Francisco, CA!
+                            </a>
+                            in San Francisco, CA!
                         </li>
 
                         <li>
@@ -385,28 +489,33 @@
                             <em>
                                 Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin.
                             </em>
-                            <a href="#publications" class="internal-link" data-page="publications">
+                            <a href="#publications"
+                               class="internal-link"
+                               data-page="publications">
                                 View publication
                             </a>.
                         </li>
+
                     </ul>
 
                 </section>
+
+                <!-- PUBLICATIONS -->
 
                 <section id="publications" class="page-section">
 
                     <h1>Publications</h1>
 
                     <div class="publication">
+
                         <div class="publication-title">
                             Application of Human Centered Reinforcement Learning
                             to Develop an Air Battle Management Operator Digital Twin
                         </div>
 
                         <div class="publication-authors">
-                            Courtney L. Crooks, Jasmine Davidson, Vincent Davidson,
-                            Patrick Tyne, Katy Wills, Peter Lebedev, Tyler Rowe,
-                            Eric Tang, and Jessica Inman
+                            Courtney L. Crooks, Jasmine Davidson,
+                            Vincent Davidson, et al.
                         </div>
 
                         <p>Springer, 2025</p>
@@ -416,15 +525,18 @@
                                 Read on Springer →
                             </a>
                         </p>
+
                     </div>
 
                 </section>
+
+                <!-- TEACHING -->
 
                 <section id="teaching" class="page-section">
 
                     <h1>Teaching</h1>
 
-                    <h3>Spring 2026 -  The Ohio State University</h3>
+                    <h3>Spring 2026 - The Ohio State University</h3>
 
                     <p>
                         Unlocking Generative AI (ENGR 2194)<br>
@@ -440,6 +552,8 @@
 
                 </section>
 
+                <!-- AWARDS -->
+
                 <section id="awards" class="page-section">
 
                     <h1>Awards</h1>
@@ -447,31 +561,68 @@
                     <div class="award">
                         <div class="award-title">Ricoh Fellowship</div>
                         <div class="award-meta">Clemson University</div>
-                        <p>Ph.D. Computer Science — Fall 2022, Spring 2023, Fall 2023, Spring 2024</p>
+                        <p>
+                            Ph.D. Computer Science —
+                            Fall 2022, Spring 2023,
+                            Fall 2023, Spring 2024
+                        </p>
                     </div>
 
                     <div class="award">
-                        <div class="award-title">NSF LSAMP Bridge to Doctorate Fellowship</div>
-                        <div class="award-meta">Clemson University</div>
-                        <p>Ph.D. Computer Science — Fall 2022</p>
+                        <div class="award-title">
+                            NSF LSAMP Bridge to Doctorate Fellowship
+                        </div>
+
+                        <div class="award-meta">
+                            Clemson University
+                        </div>
+
+                        <p>
+                            Ph.D. Computer Science — Fall 2022
+                        </p>
                     </div>
 
                     <div class="award">
-                        <div class="award-title">McKnight Doctoral Fellowship</div>
-                        <div class="award-meta">Florida Education Fund (FEF)</div>
-                        <p>Fall 2021, Spring 2022</p>
+                        <div class="award-title">
+                            McKnight Doctoral Fellowship
+                        </div>
+
+                        <div class="award-meta">
+                            Florida Education Fund (FEF)
+                        </div>
+
+                        <p>
+                            Fall 2021, Spring 2022
+                        </p>
                     </div>
 
                     <div class="award">
-                        <div class="award-title">Gem Fellowship</div>
-                        <div class="award-meta">The National Gem Consortium</div>
-                        <p>Ph.D. Computer Science — Fall 2021, Spring 2022</p>
+                        <div class="award-title">
+                            Gem Fellowship
+                        </div>
+
+                        <div class="award-meta">
+                            The National Gem Consortium
+                        </div>
+
+                        <p>
+                            Ph.D. Computer Science —
+                            Fall 2021, Spring 2022
+                        </p>
                     </div>
 
                     <div class="award">
-                        <div class="award-title">Almost-Home Scholarship</div>
-                        <div class="award-meta">Winston Salem State University</div>
-                        <p>B.S. Computer Science — Spring 2018</p>
+                        <div class="award-title">
+                            Almost-Home Scholarship
+                        </div>
+
+                        <div class="award-meta">
+                            Winston Salem State University
+                        </div>
+
+                        <p>
+                            B.S. Computer Science — Spring 2018
+                        </p>
                     </div>
 
                 </section>
@@ -482,12 +633,21 @@
 
     </div>
 
+    <!-- PAGE NAVIGATION -->
+
     <script>
-        const navLinks = document.querySelectorAll(".nav-link");
-        const pageSections = document.querySelectorAll(".page-section");
-        const internalLinks = document.querySelectorAll(".internal-link");
+
+        const navLinks =
+            document.querySelectorAll(".nav-link");
+
+        const pageSections =
+            document.querySelectorAll(".page-section");
+
+        const internalLinks =
+            document.querySelectorAll(".internal-link");
 
         function showPage(pageId, addToHistory = true) {
+
             pageSections.forEach(section => {
                 section.classList.remove("active");
             });
@@ -496,66 +656,96 @@
                 link.classList.remove("active");
             });
 
-            const selectedPage = document.getElementById(pageId);
+            const selectedPage =
+                document.getElementById(pageId);
 
             if (selectedPage) {
                 selectedPage.classList.add("active");
             }
 
-            const selectedTab = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            const selectedTab =
+                document.querySelector(`.nav-link[data-page="${pageId}"]`);
 
             if (selectedTab) {
                 selectedTab.classList.add("active");
             }
 
             if (addToHistory) {
+
                 history.pushState(
                     { page: pageId },
                     "",
                     "#" + pageId
                 );
+
             }
+
         }
 
         navLinks.forEach(link => {
+
             link.addEventListener("click", function(event) {
+
                 event.preventDefault();
 
-                const pageId = this.getAttribute("data-page");
+                const pageId =
+                    this.getAttribute("data-page");
 
                 showPage(pageId, true);
+
             });
+
         });
 
         internalLinks.forEach(link => {
+
             link.addEventListener("click", function(event) {
+
                 event.preventDefault();
 
-                const pageId = this.getAttribute("data-page");
+                const pageId =
+                    this.getAttribute("data-page");
 
                 showPage(pageId, true);
+
             });
+
         });
 
         window.addEventListener("popstate", function() {
-            const hash = window.location.hash.replace("#", "");
+
+            const hash =
+                window.location.hash.replace("#", "");
 
             if (hash && document.getElementById(hash)) {
+
                 showPage(hash, false);
+
             } else {
+
                 showPage("about", false);
+
             }
+
         });
 
         window.addEventListener("load", function() {
-            const hash = window.location.hash.replace("#", "");
+
+            const hash =
+                window.location.hash.replace("#", "");
 
             if (hash && document.getElementById(hash)) {
+
                 showPage(hash, false);
+
             } else {
+
                 showPage("about", false);
+
             }
+
         });
+
     </script>
 
 </body>
