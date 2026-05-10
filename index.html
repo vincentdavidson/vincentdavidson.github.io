@@ -11,7 +11,6 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -35,8 +34,6 @@
             margin: 0 auto;
             padding: 22px 25px;
         }
-
-        /* TOP NAVIGATION */
 
         .top-nav {
             position: sticky;
@@ -66,15 +63,11 @@
             text-decoration: underline;
         }
 
-        /* MAIN LAYOUT */
-
         .layout {
             display: flex;
             gap: 42px;
             align-items: flex-start;
         }
-
-        /* SIDEBAR */
 
         .sidebar {
             width: 220px;
@@ -100,17 +93,8 @@
             line-height: 1.2;
         }
 
-        .sidebar p {
-            color: #555;
-            margin-bottom: 8px;
-            font-size: 13px;
-            line-height: 1.35;
-        }
-
-        /* SOCIAL ICONS */
-
         .social-icons {
-            margin-top: 14px;
+            margin-top: 10px;
             display: flex;
             gap: 16px;
             align-items: center;
@@ -127,16 +111,25 @@
             color: #000;
         }
 
-        /* CONTENT */
+        .social-icons a.linkedin-icon {
+            color: #0A66C2;
+        }
+
+        .social-icons a.linkedin-icon:hover {
+            color: #004182;
+        }
 
         .content {
             flex: 1;
             max-width: 700px;
         }
 
-        section {
-            margin-bottom: 75px;
-            scroll-margin-top: 80px;
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
         }
 
         h1 {
@@ -171,39 +164,37 @@
             text-decoration: underline;
         }
 
-        /* UPDATES */
-
-        .updates-list {
+        .updates-list,
+        .awards-list {
             margin-left: 34px;
             padding-left: 12px;
             margin-top: 8px;
         }
 
-        .updates-list li {
+        .updates-list li,
+        .awards-list li {
             margin-bottom: 8px;
             padding-left: 4px;
         }
 
-        /* PUBLICATIONS */
-
-        .publication {
+        .publication,
+        .award {
             margin-bottom: 22px;
         }
 
-        .publication-title {
+        .publication-title,
+        .award-title {
             font-weight: 600;
             margin-bottom: 5px;
         }
 
-        .publication-authors {
+        .publication-authors,
+        .award-meta {
             color: #555;
             margin-bottom: 5px;
         }
 
-        /* MOBILE */
-
         @media (max-width: 850px) {
-
             .layout {
                 flex-direction: column;
             }
@@ -224,40 +215,24 @@
                 display: inline-block;
                 margin-bottom: 8px;
             }
-
         }
-
     </style>
-
 </head>
 
 <body>
 
     <div class="container">
 
-        <!-- TOP NAVIGATION -->
-
         <nav class="top-nav">
-
-            <a href="#about" class="nav-link active">Vincent Davidson</a>
-
-
-            
-
-            <a href="#publications" class="nav-link">Publications</a>
-
-            <a href="#teaching" class="nav-link">Teaching</a>
-
-            <a href="#contact" class="nav-link">Contact</a>
-
-            <!-- CV TAB -->
-            <a href="cv.pdf" target="images/vincent2026">CV</a>
-
+            <a href="#about" class="nav-link active" data-page="about">Vincent Davidson</a>
+            <a href="#publications" class="nav-link" data-page="publications">Publications</a>
+            <a href="#teaching" class="nav-link" data-page="teaching">Teaching</a>
+            <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+            <a href="#awards" class="nav-link" data-page="awards">Awards</a>
         </nav>
 
         <div class="layout">
-
-            <!-- SIDEBAR -->
 
             <aside class="sidebar">
 
@@ -266,42 +241,33 @@
                      class="profile-photo">
 
                 <h2>Vincent Davidson</h2>
-                <!-- SOCIAL ICONS -->
 
                 <div class="social-icons">
-
-                    <!-- EMAIL -->
                     <a href="mailto:davidson.805@osu.edu"
                        target="_blank"
                        aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
 
-                    <!-- LINKEDIN -->
                     <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/"
                        target="_blank"
-                       aria-label="LinkedIn">
+                       aria-label="LinkedIn"
+                       class="linkedin-icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
 
-                    <!-- GOOGLE SCHOLAR -->
                     <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao"
                        target="_blank"
                        aria-label="Google Scholar">
                         <i class="fas fa-graduation-cap"></i>
                     </a>
-
                 </div>
 
             </aside>
 
-            <!-- MAIN CONTENT -->
-
             <main class="content">
 
-                <!-- ABOUT -->
-
-                <section id="about">
+                <section id="about" class="page-section active">
 
                     <h1>About Me</h1>
 
@@ -326,7 +292,6 @@
                     <h2>Recent News:</h2>
 
                     <ul class="updates-list">
-
                         <li>
                             <strong>June 2026—</strong>
                             Participant of AI/ML training sessions at the
@@ -383,23 +348,19 @@
                             <em>
                                 Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin.
                             </em>
-                            <a href="#publications">
+                            <a href="#publications" class="internal-link" data-page="publications">
                                 View publication
                             </a>.
                         </li>
-
                     </ul>
 
                 </section>
 
-                <!-- PUBLICATIONS -->
-
-                <section id="publications">
+                <section id="publications" class="page-section">
 
                     <h1>Publications</h1>
 
                     <div class="publication">
-
                         <div class="publication-title">
                             Application of Human Centered Reinforcement Learning
                             to Develop an Air Battle Management Operator Digital Twin
@@ -418,14 +379,11 @@
                                 Read on Springer →
                             </a>
                         </p>
-
                     </div>
 
                 </section>
 
-                <!-- TEACHING -->
-
-                <section id="teaching">
+                <section id="teaching" class="page-section">
 
                     <h1>Teaching</h1>
 
@@ -445,16 +403,52 @@
 
                 </section>
 
-                <!-- CONTACT -->
-
-                <section id="contact">
+                <section id="contact" class="page-section">
 
                     <h1>Contact</h1>
 
                     <p>
-                        Feel free to connect with me through email,
-                        LinkedIn, or Google Scholar.
+                        Feel free to connect with me through email, LinkedIn, or Google Scholar.
                     </p>
+
+                </section>
+
+                <section id="awards" class="page-section">
+
+                    <h1>Awards</h1>
+
+                    <div class="award">
+                        <div class="award-title">
+                            Ricoh Fellowship
+                        </div>
+                        <div class="award-meta">
+                            Clemson University
+                        </div>
+                        <p>
+                            Ph.D. Computer Science — Fall 2022, Spring 2023, Fall 2023, Spring 2024
+                        </p>
+                    </div>
+
+                    <div class="award">
+                        <div class="award-title">
+                            NSF LSAMP Bridge to Doctorate Fellowship
+                        </div>
+                        <div class="award-meta">
+                            Clemson University
+                        </div>
+                        <p>
+                            Ph.D. Computer Science — Fall 2022
+                        </p>
+                    </div>
+
+                    <div class="award">
+                        <div class="award-title">
+                            Florida Education Fund (FEF): McKnight Doctoral Fellowship
+                        </div>
+                        <p>
+                            Fall 2021, Spring 2022
+                        </p>
+                    </div>
 
                 </section>
 
@@ -464,46 +458,60 @@
 
     </div>
 
-    <!-- ACTIVE TAB SCROLLING -->
-
     <script>
-
-        const sections = document.querySelectorAll("main section");
         const navLinks = document.querySelectorAll(".nav-link");
+        const pageSections = document.querySelectorAll(".page-section");
+        const internalLinks = document.querySelectorAll(".internal-link");
 
-        function setActiveTab(id) {
+        function showPage(pageId) {
+            pageSections.forEach(section => {
+                section.classList.remove("active");
+            });
 
             navLinks.forEach(link => {
-
-                link.classList.toggle(
-                    "active",
-                    link.getAttribute("href") === "#" + id
-                );
-
+                link.classList.remove("active");
             });
 
-        }
-
-        window.addEventListener("scroll", () => {
-
-            let current = "";
-
-            sections.forEach(section => {
-
-                const sectionTop = section.offsetTop - 140;
-
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute("id");
-                }
-
-            });
-
-            if (current) {
-                setActiveTab(current);
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add("active");
             }
 
+            const selectedTab = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            if (selectedTab) {
+                selectedTab.classList.add("active");
+            }
+
+            window.location.hash = pageId;
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+
+                const pageId = this.getAttribute("data-page");
+                showPage(pageId);
+            });
         });
 
+        internalLinks.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+
+                const pageId = this.getAttribute("data-page");
+                showPage(pageId);
+            });
+        });
+
+        window.addEventListener("load", function() {
+            const hash = window.location.hash.replace("#", "");
+
+            if (hash && document.getElementById(hash)) {
+                showPage(hash);
+            } else {
+                showPage("about");
+            }
+        });
     </script>
 
 </body>
