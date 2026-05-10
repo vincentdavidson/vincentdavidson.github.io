@@ -344,7 +344,7 @@
 
                         <li>
                             <strong>February 2026—</strong>
-                            Promoted to Specialist, Databricks Engineer at Nationwide Headquarters! 
+                            Promoted to Specialist, Databricks Engineer at Nationwide Headquarters!
                             <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_im-happy-to-share-that-ive-been-promoted-activity-7432881523097296896-kEeO">
                                 Learn more
                             </a>.
@@ -487,7 +487,7 @@
         const pageSections = document.querySelectorAll(".page-section");
         const internalLinks = document.querySelectorAll(".internal-link");
 
-        function showPage(pageId) {
+        function showPage(pageId, addToHistory = true) {
             pageSections.forEach(section => {
                 section.classList.remove("active");
             });
@@ -497,16 +497,24 @@
             });
 
             const selectedPage = document.getElementById(pageId);
+
             if (selectedPage) {
                 selectedPage.classList.add("active");
             }
 
             const selectedTab = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+
             if (selectedTab) {
                 selectedTab.classList.add("active");
             }
 
-            window.location.hash = pageId;
+            if (addToHistory) {
+                history.pushState(
+                    { page: pageId },
+                    "",
+                    "#" + pageId
+                );
+            }
         }
 
         navLinks.forEach(link => {
@@ -514,7 +522,8 @@
                 event.preventDefault();
 
                 const pageId = this.getAttribute("data-page");
-                showPage(pageId);
+
+                showPage(pageId, true);
             });
         });
 
@@ -523,17 +532,28 @@
                 event.preventDefault();
 
                 const pageId = this.getAttribute("data-page");
-                showPage(pageId);
+
+                showPage(pageId, true);
             });
+        });
+
+        window.addEventListener("popstate", function() {
+            const hash = window.location.hash.replace("#", "");
+
+            if (hash && document.getElementById(hash)) {
+                showPage(hash, false);
+            } else {
+                showPage("about", false);
+            }
         });
 
         window.addEventListener("load", function() {
             const hash = window.location.hash.replace("#", "");
 
             if (hash && document.getElementById(hash)) {
-                showPage(hash);
+                showPage(hash, false);
             } else {
-                showPage("about");
+                showPage("about", false);
             }
         });
     </script>
