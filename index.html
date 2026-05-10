@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vincent Davidson, MS</title>
 
-    <!-- FONT AWESOME ICONS -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -26,28 +25,16 @@
             color: #222;
             line-height: 1.55;
             font-size: 14px;
-            background: #ffffff;
-            position: relative;
             min-height: 100vh;
-        }
 
-        }
-
-        /* CLEMSON BACKGROUND LAYER */
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-
-            background-image: url("images/clemson.jpg");
+            background-color: #ffffff;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86)),
+                url("images/clemson.jpg");
             background-repeat: repeat;
             background-size: 135px 135px;
-            background-position: 68px 68px;
-
-            opacity: 0.12;
-            filter: grayscale(65%) saturate(65%);
-            pointer-events: none;
+            background-position: 0 0;
+            background-attachment: fixed;
         }
 
         .container {
@@ -272,9 +259,7 @@
                 <h2>Vincent Davidson</h2>
 
                 <div class="social-icons">
-                    <a href="mailto:davidson.805@osu.edu"
-                       target="_blank"
-                       aria-label="Email">
+                    <a href="mailto:davidson.805@osu.edu" target="_blank" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
 
@@ -437,51 +422,27 @@
                     <h1>Awards</h1>
 
                     <div class="award">
-                        <div class="award-title">
-                            Ricoh Fellowship
-                        </div>
-                        <div class="award-meta">
-                            Clemson University
-                        </div>
-                        <p>
-                            Ph.D. Computer Science — Fall 2022, Spring 2023, Fall 2023, Spring 2024
-                        </p>
+                        <div class="award-title">Ricoh Fellowship</div>
+                        <div class="award-meta">Clemson University</div>
+                        <p>Ph.D. Computer Science — Fall 2022, Spring 2023, Fall 2023, Spring 2024</p>
                     </div>
 
                     <div class="award">
-                        <div class="award-title">
-                            NSF LSAMP Bridge to Doctorate Fellowship
-                        </div>
-                        <div class="award-meta">
-                            Clemson University
-                        </div>
-                        <p>
-                            Ph.D. Computer Science — Fall 2022
-                        </p>
+                        <div class="award-title">NSF LSAMP Bridge to Doctorate Fellowship</div>
+                        <div class="award-meta">Clemson University</div>
+                        <p>Ph.D. Computer Science — Fall 2022</p>
                     </div>
 
                     <div class="award">
-                        <div class="award-title">
-                            McKnight Doctoral Fellowship
-                        </div>
-                        <div class="award-meta">
-                            Florida Education Fund (FEF)
-                        </div>
-                        <p>
-                            Fall 2021, Spring 2022
-                        </p>
+                        <div class="award-title">McKnight Doctoral Fellowship</div>
+                        <div class="award-meta">Florida Education Fund (FEF)</div>
+                        <p>Fall 2021, Spring 2022</p>
                     </div>
 
                     <div class="award">
-                        <div class="award-title">
-                            Gem Fellowship
-                        </div>
-                        <div class="award-meta">
-                            The National Gem Consortium
-                        </div>
-                        <p>
-                            Ph.D. Computer Science — Fall 2021, Spring 2022
-                        </p>
+                        <div class="award-title">Gem Fellowship</div>
+                        <div class="award-meta">The National Gem Consortium</div>
+                        <p>Ph.D. Computer Science — Fall 2021, Spring 2022</p>
                     </div>
 
                 </section>
