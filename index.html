@@ -36,7 +36,7 @@
             padding: 22px 25px;
         }
 
-        /* TOP NAVIGATION */
+        /* NAVIGATION */
 
         .top-nav {
             position: sticky;
@@ -79,49 +79,62 @@
         .sidebar {
             width: 220px;
             min-width: 220px;
+
             position: sticky;
             top: 62px;
 
-            /* UNIVERSITY BACKGROUNDS */
-
-            background-image:
-                linear-gradient(rgba(255,255,255,0.92),
-                rgba(255,255,255,0.92)),
-                url("images/wssu.jpg"),
-                url("images/clemson.jpg");
-
-            background-repeat:
-                no-repeat,
-                no-repeat,
-                no-repeat;
-
-            background-position:
-                center,
-                top left,
-                bottom right;
-
-            background-size:
-                cover,
-                90px,
-                90px;
+            padding: 18px;
 
             border-radius: 16px;
 
-            padding: 18px;
+            /* REPEATING UNIVERSITY BACKGROUND */
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.88),
+                    rgba(255,255,255,0.88)
+                ),
+                url("images/wssu-logo.jpg"),
+                url("images/clemson-logo.jpg");
+
+            background-repeat:
+                no-repeat,
+                repeat,
+                repeat;
+
+            background-size:
+                cover,
+                85px,
+                85px;
+
+            background-position:
+                center,
+                center,
+                center;
+
+            background-blend-mode: normal;
         }
+
+        /* PROFILE PHOTO */
 
         .profile-photo {
             width: 175px;
             height: 175px;
+
             object-fit: cover;
             object-position: center center;
+
             border-radius: 50%;
+
             display: block;
+
             margin-bottom: 12px;
 
             border: 3px solid white;
 
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            background: white;
         }
 
         .sidebar h2 {
@@ -150,6 +163,8 @@
         .social-icons a:hover {
             color: #000;
         }
+
+        /* LINKEDIN BLUE */
 
         .social-icons a.linkedin-icon {
             color: #0A66C2;
@@ -531,8 +546,11 @@
 
     <script>
 
-        const navLinks = document.querySelectorAll(".nav-link");
-        const pageSections = document.querySelectorAll(".page-section");
+        const navLinks =
+            document.querySelectorAll(".nav-link");
+
+        const pageSections =
+            document.querySelectorAll(".page-section");
 
         function showPage(pageId) {
 
