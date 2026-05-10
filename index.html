@@ -50,8 +50,6 @@
             padding: 22px 25px;
         }
 
-        /* NAVIGATION */
-
         .top-nav {
             position: sticky;
             top: 0;
@@ -80,47 +78,32 @@
             text-decoration: underline;
         }
 
-        /* LAYOUT */
-
         .layout {
             display: flex;
             gap: 42px;
             align-items: flex-start;
         }
 
-        /* SIDEBAR */
-
         .sidebar {
             width: 220px;
             min-width: 220px;
             position: sticky;
             top: 62px;
-
             background: rgba(255,255,255,0.90);
-
             padding: 18px;
             border-radius: 16px;
         }
 
-        /* PROFILE PHOTO */
-
         .profile-photo {
             width: 175px;
             height: 175px;
-
             object-fit: cover;
             object-position: center center;
-
             border-radius: 50%;
-
             display: block;
-
             margin-bottom: 12px;
-
             border: 3px solid white;
-
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-
             background: white;
         }
 
@@ -130,8 +113,6 @@
             margin-bottom: 6px;
             line-height: 1.2;
         }
-
-        /* SOCIAL ICONS */
 
         .social-icons {
             margin-top: 10px;
@@ -175,14 +156,10 @@
             color: #C13584;
         }
 
-        /* CONTENT */
-
         .content {
             flex: 1;
             max-width: 700px;
-
             background: rgba(255,255,255,0.90);
-
             padding: 18px;
             border-radius: 16px;
         }
@@ -227,8 +204,6 @@
             text-decoration: underline;
         }
 
-        /* LISTS */
-
         .updates-list,
         .awards-list {
             margin-left: 34px;
@@ -241,8 +216,6 @@
             margin-bottom: 8px;
             padding-left: 4px;
         }
-
-        /* CONTENT BLOCKS */
 
         .publication,
         .award {
@@ -260,8 +233,6 @@
             color: #555;
             margin-bottom: 5px;
         }
-
-        /* ARTICLE PREVIEW CARD */
 
         .article-card {
             border: 1px solid #ddd;
@@ -285,8 +256,6 @@
         .article-summary {
             margin-bottom: 10px;
         }
-
-        /* MOBILE */
 
         @media (max-width: 850px) {
 
@@ -320,8 +289,6 @@
 <body>
 
     <div class="container">
-
-        <!-- NAVIGATION -->
 
         <nav class="top-nav">
 
@@ -364,8 +331,6 @@
 
         <div class="layout">
 
-            <!-- SIDEBAR -->
-
             <aside class="sidebar">
 
                 <img src="images/bizphoto.jpg"
@@ -373,8 +338,6 @@
                      class="profile-photo">
 
                 <h2>Vincent Davidson</h2>
-
-                <!-- SOCIAL ICONS -->
 
                 <div class="social-icons">
 
@@ -415,13 +378,9 @@
 
             </aside>
 
-            <!-- MAIN CONTENT -->
-
             <main class="content">
 
-                <!-- BIO -->
-
-                <section id="bio" class="page-section active">
+                <section id="home" class="page-section active">
 
                     <h1>Bio</h1>
 
@@ -514,11 +473,11 @@
                         <li>
                             <strong>August 2022—</strong>
                             Joined Clemson University as an inaugural, NSF Bridge to Doctorate Fellow within the PhD Computer Science program!
+                        </li>
+
                     </ul>
 
                 </section>
-
-                <!-- PUBLICATIONS -->
 
                 <section id="publications" class="page-section">
 
@@ -548,8 +507,6 @@
 
                 </section>
 
-                <!-- TEACHING -->
-
                 <section id="teaching" class="page-section">
 
                     <h1>Teaching</h1>
@@ -569,8 +526,6 @@
                     </p>
 
                 </section>
-
-                <!-- ARTICLES -->
 
                 <section id="articles" class="page-section">
 
@@ -602,8 +557,6 @@
                     </div>
 
                 </section>
-
-                <!-- AWARDS -->
 
                 <section id="awards" class="page-section">
 
@@ -683,8 +636,6 @@
         </div>
 
     </div>
-
-    <!-- PAGE NAVIGATION -->
 
     <script>
 
@@ -792,6 +743,14 @@
             } else {
 
                 showPage("home", false);
+
+                if (window.location.hash !== "#home") {
+                    history.replaceState(
+                        { page: "home" },
+                        "",
+                        "#home"
+                    );
+                }
 
             }
 
