@@ -1,842 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vincent Davidson, MS</title>
-
-    <!-- FONT AWESOME ICONS -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: Helvetica, Arial, sans-serif;
-            color: #222;
-            line-height: 1.55;
-            font-size: 14px;
-            min-height: 100vh;
-
-            background-color: #ffffff;
-
-            background-image:
-                linear-gradient(
-                    rgba(255,255,255,0.84),
-                    rgba(255,255,255,0.84)
-                ),
-                url("images/clemson.jpg");
-
-            background-repeat: repeat;
-            background-size: 135px 135px;
-            background-position: 0 0;
-            background-attachment: fixed;
+            font-family: Helvetica, Arial, sans-serif; color: #222; line-height: 1.55;
+            font-size: 14px; min-height: 100vh; background-color: #fff;
+            background-image: linear-gradient(rgba(255,255,255,0.84), rgba(255,255,255,0.84)), url("images/clemson.jpg");
+            background-repeat: repeat; background-size: 135px 135px; background-position: 0 0; background-attachment: fixed;
         }
-
-        .container {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 22px 25px;
-        }
-
-        .top-nav {
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.94);
-            padding: 10px 0 12px 0;
-            margin-bottom: 24px;
-            z-index: 1000;
-        }
-
-        .top-nav a {
-            color: #555;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: normal;
-            margin-right: 22px;
-        }
-
-        .top-nav a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-
-        .top-nav a.active {
-            color: #000;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-
-        .layout {
-            display: flex;
-            gap: 42px;
-            align-items: flex-start;
-        }
-
-        .sidebar {
-            width: 220px;
-            min-width: 220px;
-            position: sticky;
-            top: 62px;
-            background: rgba(255,255,255,0.90);
-            padding: 18px;
-            border-radius: 16px;
-        }
-
-        .profile-photo {
-            width: 175px;
-            height: 175px;
-            object-fit: cover;
-            object-position: center center;
-            border-radius: 50%;
-            display: block;
-            margin-bottom: 12px;
-            border: 3px solid white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            background: white;
-        }
-
-        .sidebar h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            line-height: 1.2;
-        }
-
-        .social-icons {
-            margin-top: 10px;
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .social-icons a {
-            color: #555;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.2s ease;
-        }
-
-        .social-icons a:hover {
-            color: #000;
-        }
-
-        .social-icons a.linkedin-icon {
-            color: #0A66C2;
-        }
-
-        .social-icons a.linkedin-icon:hover {
-            color: #004182;
-        }
-
-        .social-icons a.github-icon {
-            color: #181717;
-        }
-
-        .social-icons a.github-icon:hover {
-            color: #000000;
-        }
-
-        .social-icons a.x-icon {
-            color: #000000;
-        }
-
-        .social-icons a.x-icon:hover {
-            color: #222222;
-        }
-
-        .social-icons a.instagram-icon {
-            color: #E1306C;
-        }
-
-        .social-icons a.instagram-icon:hover {
-            color: #C13584;
-        }
-
-        .social-icons a.researchgate-icon {
-            color: #00CCBB;
-        }
-
-        .social-icons a.researchgate-icon:hover {
-            color: #009E91;
-        }
-
-        .social-icons a.substack-icon {
-            color: #FF6719;
-        }
-
-        .social-icons a.substack-icon:hover {
-            color: #E85D16;
-        }
-
-        .content {
-            flex: 1;
-            max-width: 700px;
-            background: rgba(255,255,255,0.90);
-            padding: 18px;
-            border-radius: 16px;
-        }
-
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active {
-            display: block;
-        }
-
-        h1 {
-            font-size: 28px;
-            margin-bottom: 14px;
-            font-weight: 600;
-        }
-
-        h2 {
-            font-size: 20px;
-            margin-top: 22px;
-            margin-bottom: 9px;
-            font-weight: 600;
-        }
-
-        h3 {
-            font-size: 17px;
-            margin-bottom: 7px;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 12px;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .updates-list,
-        .awards-list {
-            margin-left: 34px;
-            padding-left: 12px;
-            margin-top: 8px;
-        }
-
-        .updates-list li,
-        .awards-list li {
-            margin-bottom: 8px;
-            padding-left: 4px;
-        }
-
-        .publication,
-        .award {
-            margin-bottom: 22px;
-        }
-
-        .publication-title,
-        .award-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .publication-authors,
-        .award-meta {
-            color: #555;
-            margin-bottom: 5px;
-        }
-
-        .article-card {
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 16px;
-            background: rgba(255,255,255,0.95);
-            margin-bottom: 20px;
-        }
-
-        .article-title {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .article-meta {
-            color: #555;
-            margin-bottom: 8px;
-        }
-
-        .article-summary {
-            margin-bottom: 10px;
-        }
-
+        .container { max-width: 980px; margin: 0 auto; padding: 22px 25px; }
+        .top-nav { position: sticky; top: 0; background: rgba(255,255,255,0.94); padding: 10px 0 12px; margin-bottom: 24px; z-index: 1000; }
+        .top-nav a { color: #555; text-decoration: none; font-size: 14px; font-weight: normal; margin-right: 22px; }
+        .top-nav a:hover, .top-nav a.active { color: #000; text-decoration: underline; }
+        .top-nav a.active { font-weight: 600; }
+        .layout { display: flex; gap: 42px; align-items: flex-start; }
+        .sidebar { width: 220px; min-width: 220px; position: sticky; top: 62px; background: rgba(255,255,255,0.90); padding: 18px; border-radius: 16px; }
+        .profile-photo { width: 175px; height: 175px; object-fit: cover; object-position: center; border-radius: 50%; display: block; margin-bottom: 12px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.12); background: white; }
+        .sidebar h2 { font-size: 20px; font-weight: 600; margin-bottom: 6px; line-height: 1.2; }
+        .social-icons { margin-top: 10px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+        .social-icons a { color: #555; text-decoration: none; font-size: 18px; transition: color 0.2s ease; }
+        .social-icons a:hover { color: #000; }
+        .social-icons a.linkedin-icon { color: #0A66C2; } .social-icons a.linkedin-icon:hover { color: #004182; }
+        .social-icons a.github-icon { color: #181717; } .social-icons a.github-icon:hover { color: #000; }
+        .social-icons a.x-icon { color: #000; } .social-icons a.x-icon:hover { color: #222; }
+        .social-icons a.instagram-icon { color: #E1306C; } .social-icons a.instagram-icon:hover { color: #C13584; }
+        .social-icons a.researchgate-icon { color: #00CCBB; } .social-icons a.researchgate-icon:hover { color: #009E91; }
+        .social-icons a.substack-icon { color: #FF6719; } .social-icons a.substack-icon:hover { color: #E85D16; }
+        .content { flex: 1; max-width: 700px; background: rgba(255,255,255,0.90); padding: 18px; border-radius: 16px; }
+        .page-section { display: none; } .page-section.active { display: block; }
+        h1 { font-size: 28px; margin-bottom: 14px; font-weight: 600; }
+        h2 { font-size: 20px; margin-top: 22px; margin-bottom: 9px; font-weight: 600; }
+        h3 { font-size: 17px; margin-bottom: 7px; font-weight: 600; }
+        p { margin-bottom: 12px; }
+        a { color: #0066cc; text-decoration: none; } a:hover { text-decoration: underline; }
+        .updates-list, .awards-list { margin-left: 34px; padding-left: 12px; margin-top: 8px; }
+        .updates-list li, .awards-list li { margin-bottom: 8px; padding-left: 4px; }
+        .publication, .award { margin-bottom: 22px; }
+        .publication-title, .award-title { font-weight: 600; margin-bottom: 5px; }
+        .publication-authors, .award-meta { color: #555; margin-bottom: 5px; }
+        .article-card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: rgba(255,255,255,0.95); margin-bottom: 20px; }
+        .article-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+        .article-meta { color: #555; margin-bottom: 8px; }
+        .article-summary { margin-bottom: 10px; }
         @media (max-width: 850px) {
-
-            .layout {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                min-width: 100%;
-                position: relative;
-                top: 0;
-            }
-
-            .profile-photo {
-                width: 165px;
-                height: 165px;
-            }
-
-            .top-nav a {
-                display: inline-block;
-                margin-bottom: 8px;
-            }
-
+            .layout { flex-direction: column; }
+            .sidebar { width: 100%; min-width: 100%; position: relative; top: 0; }
+            .profile-photo { width: 165px; height: 165px; }
+            .top-nav a { display: inline-block; margin-bottom: 8px; }
         }
-
     </style>
-
 </head>
-
 <body>
-
     <div class="container">
-
         <nav class="top-nav">
-
-            <a href="#home"
-               class="nav-link active"
-               data-page="home">
-               Home
-            </a>
-
-            <a href="#publications"
-               class="nav-link"
-               data-page="publications">
-               Publications
-            </a>
-
-            <a href="#teaching"
-               class="nav-link"
-               data-page="teaching">
-               Teaching
-            </a>
-
-            <a href="#blogs"
-               class="nav-link"
-               data-page="blogs">
-               Blogs
-            </a>
-
-            <a href="#awards"
-               class="nav-link"
-               data-page="awards">
-               Awards
-            </a>
-
-            <a href="curriculum%20vitae/Vince2026CV.pdf"
-               target="_blank">
-               CV
-            </a>
-
+            <a href="#home" class="nav-link active" data-page="home">Home</a>
+            <a href="#publications" class="nav-link" data-page="publications">Publications</a>
+            <a href="#teaching" class="nav-link" data-page="teaching">Teaching</a>
+            <a href="#blogs" class="nav-link" data-page="blogs">Blogs</a>
+            <a href="#awards" class="nav-link" data-page="awards">Awards</a>
+            <a href="curriculum%20vitae/Vince2026CV.pdf" target="_blank">CV</a>
         </nav>
-
         <div class="layout">
-
             <aside class="sidebar">
-
-                <img src="images/bizphoto.jpg"
-                     alt="Vincent Davidson"
-                     class="profile-photo">
-
+                <img src="images/bizphoto.jpg" alt="Vincent Davidson" class="profile-photo">
                 <h2>Vincent Davidson</h2>
-
                 <div class="social-icons">
-
-                    <a href="mailto:davidson.805@osu.edu"
-                       target="_blank"
-                       aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/"
-                       target="_blank"
-                       aria-label="LinkedIn"
-                       class="linkedin-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-
-                    <a href="https://github.com/vincentdavidson"
-                       target="_blank"
-                       aria-label="GitHub"
-                       class="github-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-
-                    <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao"
-                       target="_blank"
-                       aria-label="Google Scholar">
-                        <i class="fas fa-graduation-cap"></i>
-                    </a>
-
-                    <a href="https://x.com/VncntDvdsn"
-                       target="_blank"
-                       aria-label="X"
-                       class="x-icon">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/drvintdave/"
-                       target="_blank"
-                       aria-label="Instagram"
-                       class="instagram-icon">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
-                    <a href="https://www.researchgate.net/profile/Vincent-Davidson-5?ev=prf_overview"
-                       target="_blank"
-                       aria-label="ResearchGate"
-                       class="researchgate-icon">
-                        <i class="fab fa-researchgate"></i>
-                    </a>
-
-                    <a href="https://substack.com/@vincentdavidson"
-                       target="_blank"
-                       aria-label="Substack"
-                       class="substack-icon">
-                        <i class="fa-solid fa-newspaper"></i>
-                    </a>
-
+                    <a href="mailto:davidson.805@osu.edu" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/vincent-davidson-1b09a1bb/" target="_blank" aria-label="LinkedIn" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/vincentdavidson" target="_blank" aria-label="GitHub" class="github-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://scholar.google.com/citations?user=6_UD6McAAAAJ&hl=en&oi=ao" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://x.com/VncntDvdsn" target="_blank" aria-label="X" class="x-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/drvintdave/" target="_blank" aria-label="Instagram" class="instagram-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.researchgate.net/profile/Vincent-Davidson-5?ev=prf_overview" target="_blank" aria-label="ResearchGate" class="researchgate-icon"><i class="fab fa-researchgate"></i></a>
+                    <a href="https://substack.com/@vincentdavidson" target="_blank" aria-label="Substack" class="substack-icon"><i class="fa-solid fa-newspaper"></i></a>
                 </div>
-
             </aside>
-
             <main class="content">
-
                 <section id="home" class="page-section active">
-
                     <h1>Bio</h1>
-
                     <p>
-                        I am a PhD Candidate in Computer Science and Engineering at The Ohio State University and an AI/Databricks professional at Nationwide Headquarters,
-                        where I work at the intersection of scalable AI systems, distributed data infrastructure, and enterprise machine learning platforms.
-
+                        I am a PhD Candidate in Computer Science and Engineering at The Ohio State University and an AI/Databricks professional at Nationwide Headquarters, where I work at the intersection of scalable AI systems, distributed data infrastructure, and enterprise machine learning platforms.
                     </p>
-
                     <p>
-                        My research focuses on building trustworthy and scalable AI systems that can efficiently retrieve, manage, and reason over context in complex enterprise environments. My goal                           is to develop reliable AI infrastructures that support transparent, efficient, and trustworthy decision-making in high-stakes real-world settings.
+                        My research examines the control layer between enterprise applications and shared large-language-model services. I study how to measure and predict token consumption, manage shared token-per-minute quotas through admission control, and make these systems fair across tenants. My dissertation uses production traces from an enterprise diagnostic platform to develop and evaluate practical approaches to resource estimation and control.
                     </p>
-
                     <p>
-                        I hold a Master of Science degree in Computer Science from Clemson University
-                        and a Bachelor of Science degree in Computer Science from Winston-Salem State University.
+                        I hold a Master of Science degree in Computer Science from Clemson University and a Bachelor of Science degree in Computer Science from Winston-Salem State University.
                     </p>
-
                     <h2>Recent News:</h2>
-
                     <ul class="updates-list">
-
-                        <li>
-                            <strong>October 2026—</strong>
-                            My first paper as first author, <em>“Characterizing and Predicting Token Consumption in Enterprise AIOps,”</em>
-                            has been accepted at ACM Middleware 2026 in Tarragona, Spain!
-                        </li>
-
-                        <li>
-                            <strong>July 2026—</strong>
-                            The Context Crew won the inaugural Trusted Data Impact Spotlight Award at Nationwide's 2026 Enterprise Hackathon!
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7483240177457356800/">
-                                Learn more
-                            </a>.
-                        </li>
-
-                        <li>
-                            <strong>June 2026—</strong>
-                            Participant of AI/ML training sessions at the
-                            <a href="https://www.databricks.com/dataaisummit/">
-                                Databricks Data + AI Summit
-                            </a>
-                            in San Francisco, CA!
-                        </li>
-
-                        <li>
-                            <strong>April 2026—</strong>
-                            Passed Qualifying Exams for the Ph.D. program in Computer Science and Engineering at The Ohio State University!
-                        </li>
-
-                        <li>
-                            <strong>February 2026—</strong>
-                            Promoted to Specialist, Databricks Engineer at Nationwide Headquarters!
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_im-happy-to-share-that-ive-been-promoted-activity-7432881523097296896-kEeO">
-                                Learn more
-                            </a>.
-                        </li>
-
-                        <li>
-                            <strong>October 2025—</strong>
-                            Co-led the Databricks third annual Generative AI workshop in Phoenix, Arizona, highlighting the new AgentBricks feature!
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_small-town-kid-with-big-goals-i-am-extremely-activity-7389793603721515009--EOw">
-                                Learn more
-                            </a>.
-                        </li>
-
-                        <li>
-                            <strong>December 2024—</strong>
-                            Joined Nationwide Headquarters as Sr. Analyst, Databricks Engineer!
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_newnationwider-offeraccepted-teamnationwide-activity-7270432714703474689-Gr3g">
-                                Learn more
-                            </a>.
-                        </li>
-
-                        <li>
-                            <strong>August 2024—</strong>
-                            Joined the ReRout Research Lab advised by Dr. Christopher Stewart within the Ph.D. Computer Science and Engineering program at The Ohio State University!
-                        </li>
-
-                        <li>
-                            <strong>August 2024—</strong>
-                            Graduated with a Master's degree in Computer Science from Clemson University!
-                            <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_gobuckeyes-activity-7228764054167662593-65i_">
-                                Learn more
-                            </a>.
-                        </li>
-
-                        <li>
-                            <strong>July 2024—</strong>
-                            1st publication accepted at the Computational Science and Computational Intelligence (CSCI) conference:
-                            <em>
-                                Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin.
-                            </em>
-                            <a href="#publications"
-                               class="internal-link"
-                               data-page="publications">
-                                View publication
-                            </a>.
-                        </li>
-
-                        <li>
-                            <strong>August 2022—</strong>
-                            Joined Clemson University as an inaugural NSF Bridge to Doctorate Fellow within the PhD Computer Science program!
-                            <a href="https://news.clemson.edu/new-program-to-support-the-next-generation-of-stem-doctors/"
-                               target="_blank">
-                                Learn more
-                            </a>.
-                        </li>
-
+                        <li><strong>October 2026—</strong> My first paper as first author, <em>“Characterizing and Predicting Token Consumption in Enterprise AIOps,”</em> has been accepted at ACM Middleware 2026 in Tarragona, Spain!</li>
+                        <li><strong>July 2026—</strong> The Context Crew won the inaugural Trusted Data Impact Spotlight Award at Nationwide's 2026 Enterprise Hackathon! <a href="https://www.linkedin.com/feed/update/urn:li:activity:7483240177457356800/">Learn more</a>.</li>
+                        <li><strong>June 2026—</strong> Participant of AI/ML training sessions at the <a href="https://www.databricks.com/dataaisummit/">Databricks Data + AI Summit</a> in San Francisco, CA!</li>
+                        <li><strong>April 2026—</strong> Passed Qualifying Exams for the Ph.D. program in Computer Science and Engineering at The Ohio State University!</li>
+                        <li><strong>February 2026—</strong> Promoted to Specialist, Databricks Engineer at Nationwide Headquarters! <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_im-happy-to-share-that-ive-been-promoted-activity-7432881523097296896-kEeO">Learn more</a>.</li>
+                        <li><strong>October 2025—</strong> Co-led the Databricks third annual Generative AI workshop in Phoenix, Arizona, highlighting the new AgentBricks feature! <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_small-town-kid-with-big-goals-i-am-extremely-activity-7389793603721515009--EOw">Learn more</a>.</li>
+                        <li><strong>December 2024—</strong> Joined Nationwide Headquarters as Sr. Analyst, Databricks Engineer! <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_newnationwider-offeraccepted-teamnationwide-activity-7270432714703474689-Gr3g">Learn more</a>.</li>
+                        <li><strong>August 2024—</strong> Joined the ReRout Research Lab advised by Dr. Christopher Stewart within the Ph.D. Computer Science and Engineering program at The Ohio State University!</li>
+                        <li><strong>August 2024—</strong> Graduated with a Master's degree in Computer Science from Clemson University! <a href="https://www.linkedin.com/posts/vincent-davidson-1b09a1bb_gobuckeyes-activity-7228764054167662593-65i_">Learn more</a>.</li>
+                        <li><strong>July 2024—</strong> 1st publication accepted at the Computational Science and Computational Intelligence (CSCI) conference: <em>Applications of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin.</em> <a href="#publications" class="internal-link" data-page="publications">View publication</a>.</li>
+                        <li><strong>August 2022—</strong> Joined Clemson University as an inaugural NSF Bridge to Doctorate Fellow within the PhD Computer Science program! <a href="https://news.clemson.edu/new-program-to-support-the-next-generation-of-stem-doctors/" target="_blank">Learn more</a>.</li>
                     </ul>
-
                 </section>
-
                 <section id="publications" class="page-section">
-
                     <h1>Publications</h1>
-
                     <div class="publication">
-
-                        <div class="publication-title">
-                            Characterizing and Predicting Token Consumption in Enterprise AIOps
-                        </div>
-
+                        <div class="publication-title">Characterizing and Predicting Token Consumption in Enterprise AIOps</div>
                         <p>ACM Middleware 2026 · Accepted · Tarragona, Spain</p>
-
                     </div>
-
                     <div class="publication">
-
-                        <div class="publication-title">
-                            Application of Human Centered Reinforcement Learning
-                            to Develop an Air Battle Management Operator Digital Twin
-                        </div>
-
-                        <div class="publication-authors">
-                            Courtney L. Crooks, Jasmine Davidson,
-                            Vincent Davidson, et al.
-                        </div>
-
+                        <div class="publication-title">Application of Human Centered Reinforcement Learning to Develop an Air Battle Management Operator Digital Twin</div>
+                        <div class="publication-authors">Courtney L. Crooks, Jasmine Davidson, Vincent Davidson, et al.</div>
                         <p>Springer, 2025</p>
-
-                        <p>
-                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-94937-1_2">
-                                Read on Springer →
-                            </a>
-                        </p>
-
+                        <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-94937-1_2">Read on Springer →</a></p>
                     </div>
-
                 </section>
-
                 <section id="teaching" class="page-section">
-
                     <h1>Teaching</h1>
-
+                    <h3>Graduate Teaching Associate, MTDA Capstone Course — The Ohio State University</h3>
+                    <p>
+                        Mentor master's student teams through semester-long data projects with external clients, helping them scope open-ended requests into tractable questions, select defensible methods, and present results to non-technical sponsors.
+                    </p>
                     <h3>Spring 2026 - The Ohio State University</h3>
-
-                    <p>
-                        Unlocking Generative AI (ENGR 2194)<br>
-                        Python Perspectives (COMPEDU 2194)
-                    </p>
-
+                    <p>Unlocking Generative AI (ENGR 2194)<br>Python Perspectives (COMPEDU 2194)</p>
                     <h3>Fall 2025 - The Ohio State University</h3>
-
-                    <p>
-                        Unlocking Generative AI (ENGR 2194)<br>
-                        Python Perspectives (COMPEDU 2194)
-                    </p>
-
+                    <p>Unlocking Generative AI (ENGR 2194)<br>Python Perspectives (COMPEDU 2194)</p>
                 </section>
-
                 <section id="blogs" class="page-section">
-
                     <h1>Blogs</h1>
-
                     <div class="article-card">
-
-                        <div class="article-title">
-                            Supporting Each Other Through Graduate School
-                        </div>
-
-                        <div class="article-meta">
-                            Clemson News · September 28, 2022
-                        </div>
-
-                        <p class="article-summary">
-                            Clemson News highlighted Vincent and Jasmine Davidson as a married couple
-                            beginning their Ph.D. journeys together at Clemson University while
-                            supporting each other through graduate school.
-                        </p>
-
-                        <p>
-                            <a href="https://news.clemson.edu/supporting-each-other-through-graduate-school/"
-                               target="_blank">
-                                Read full article →
-                            </a>
-                        </p>
-
+                        <div class="article-title">Supporting Each Other Through Graduate School</div>
+                        <div class="article-meta">Clemson News · September 28, 2022</div>
+                        <p class="article-summary">Clemson News highlighted Vincent and Jasmine Davidson as a married couple beginning their Ph.D. journeys together at Clemson University while supporting each other through graduate school.</p>
+                        <p><a href="https://news.clemson.edu/supporting-each-other-through-graduate-school/" target="_blank">Read full article →</a></p>
                     </div>
-
                 </section>
-
                 <section id="awards" class="page-section">
-
                     <h1>Awards</h1>
-
-                    <div class="award">
-                        <div class="award-title">Trusted Data Impact Spotlight Award</div>
-                        <div class="award-meta">Nationwide Headquarters</div>
-                        <p>
-                            Enterprise Hackathon Winner — July 2026
-                        </p>
-                    </div>
-
-                    <div class="award">
-                        <div class="award-title">Ricoh Fellowship</div>
-                        <div class="award-meta">Clemson University</div>
-                        <p>
-                            Ph.D. Computer Science —
-                            Fall 2022, Spring 2023,
-                            Fall 2023, Spring 2024
-                        </p>
-                    </div>
-
-                    <div class="award">
-                        <div class="award-title">
-                            NSF LSAMP Bridge to Doctorate Fellowship
-                        </div>
-
-                        <div class="award-meta">
-                            Clemson University
-                        </div>
-
-                        <p>
-                            Ph.D. Computer Science — Fall 2022
-                        </p>
-                    </div>
-
-                    <div class="award">
-                        <div class="award-title">
-                            McKnight Doctoral Fellowship
-                        </div>
-
-                        <div class="award-meta">
-                            Florida Education Fund (FEF)
-                        </div>
-
-                        <p>
-                            Ph.D Computer Science - Fall 2021, Spring 2022
-                        </p>
-                    </div>
-
-                    <div class="award">
-                        <div class="award-title">
-                            Gem Fellowship
-                        </div>
-
-                        <div class="award-meta">
-                            The National Gem Consortium
-                        </div>
-
-                        <p>
-                            Ph.D. Computer Science —
-                            Fall 2021, Spring 2022
-                        </p>
-                    </div>
-
-                    <div class="award">
-                        <div class="award-title">
-                            Almost-Home Scholarship
-                        </div>
-
-                        <div class="award-meta">
-                            Winston Salem State University
-                        </div>
-
-                        <p>
-                            B.S. Computer Science — Spring 2018
-                        </p>
-                    </div>
-
+                    <div class="award"><div class="award-title">Trusted Data Impact Spotlight Award</div><div class="award-meta">Nationwide Headquarters</div><p>Enterprise Hackathon Winner — July 2026</p></div>
+                    <div class="award"><div class="award-title">Ricoh Fellowship</div><div class="award-meta">Clemson University</div><p>Ph.D. Computer Science — Fall 2022, Spring 2023, Fall 2023, Spring 2024</p></div>
+                    <div class="award"><div class="award-title">NSF LSAMP Bridge to Doctorate Fellowship</div><div class="award-meta">Clemson University</div><p>Ph.D. Computer Science — Fall 2022</p></div>
+                    <div class="award"><div class="award-title">McKnight Doctoral Fellowship</div><div class="award-meta">Florida Education Fund (FEF)</div><p>Ph.D Computer Science - Fall 2021, Spring 2022</p></div>
+                    <div class="award"><div class="award-title">Gem Fellowship</div><div class="award-meta">The National Gem Consortium</div><p>Ph.D. Computer Science — Fall 2021, Spring 2022</p></div>
+                    <div class="award"><div class="award-title">Almost-Home Scholarship</div><div class="award-meta">Winston Salem State University</div><p>B.S. Computer Science — Spring 2018</p></div>
                 </section>
-
             </main>
-
         </div>
-
     </div>
-
     <script>
-
-        const navLinks =
-            document.querySelectorAll(".nav-link");
-
-        const pageSections =
-            document.querySelectorAll(".page-section");
-
-        const internalLinks =
-            document.querySelectorAll(".internal-link");
-
+        const navLinks = document.querySelectorAll(".nav-link");
+        const pageSections = document.querySelectorAll(".page-section");
+        const internalLinks = document.querySelectorAll(".internal-link");
         function showPage(pageId, addToHistory = true) {
-
-            pageSections.forEach(section => {
-                section.classList.remove("active");
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-            });
-
-            const selectedPage =
-                document.getElementById(pageId);
-
-            if (selectedPage) {
-                selectedPage.classList.add("active");
-            }
-
-            const selectedTab =
-                document.querySelector(`.nav-link[data-page="${pageId}"]`);
-
-            if (selectedTab) {
-                selectedTab.classList.add("active");
-            }
-
-            if (addToHistory) {
-
-                history.pushState(
-                    { page: pageId },
-                    "",
-                    "#" + pageId
-                );
-
-            }
-
+            pageSections.forEach(section => section.classList.remove("active"));
+            navLinks.forEach(link => link.classList.remove("active"));
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) selectedPage.classList.add("active");
+            const selectedTab = document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            if (selectedTab) selectedTab.classList.add("active");
+            if (addToHistory) history.pushState({ page: pageId }, "", "#" + pageId);
         }
-
-        navLinks.forEach(link => {
-
-            link.addEventListener("click", function(event) {
-
-                event.preventDefault();
-
-                const pageId =
-                    this.getAttribute("data-page");
-
-                showPage(pageId, true);
-
-            });
-
-        });
-
-        internalLinks.forEach(link => {
-
-            link.addEventListener("click", function(event) {
-
-                event.preventDefault();
-
-                const pageId =
-                    this.getAttribute("data-page");
-
-                showPage(pageId, true);
-
-            });
-
-        });
-
+        navLinks.forEach(link => link.addEventListener("click", function(event) {
+            event.preventDefault();
+            showPage(this.getAttribute("data-page"), true);
+        }));
+        internalLinks.forEach(link => link.addEventListener("click", function(event) {
+            event.preventDefault();
+            showPage(this.getAttribute("data-page"), true);
+        }));
         window.addEventListener("popstate", function() {
-
-            const hash =
-                window.location.hash.replace("#", "");
-
-            if (hash && document.getElementById(hash)) {
-
-                showPage(hash, false);
-
-            } else {
-
-                showPage("home", false);
-
-            }
-
+            const hash = window.location.hash.replace("#", "");
+            if (hash && document.getElementById(hash)) showPage(hash, false);
+            else showPage("home", false);
         });
-
         window.addEventListener("load", function() {
-
-            const hash =
-                window.location.hash.replace("#", "");
-
-            if (hash && document.getElementById(hash)) {
-
-                showPage(hash, false);
-
-            } else {
-
+            const hash = window.location.hash.replace("#", "");
+            if (hash && document.getElementById(hash)) showPage(hash, false);
+            else {
                 showPage("home", false);
-
-                if (window.location.hash !== "#home") {
-                    history.replaceState(
-                        { page: "home" },
-                        "",
-                        "#home"
-                    );
-                }
-
+                if (window.location.hash !== "#home") history.replaceState({ page: "home" }, "", "#home");
             }
-
         });
-
     </script>
-
 </body>
-
 </html>
